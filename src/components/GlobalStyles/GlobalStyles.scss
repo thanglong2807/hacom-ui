@@ -1,0 +1,47 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+:root {
+    --primary: #202c43;
+    --color-btn: repeating-linear-gradient(to right, red 0, #00f 50%, red 100%);
+    --text-color: #333e48;
+    --red-color: #ed1b24;
+    --font-size: 11px;
+    --white-color: #fff;
+}
+
+html {
+    font-size: 62.5%;
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizespeed;
+    padding: 0;
+    margin: 0;
+}
+
+a[href] {
+    text-decoration: none;
+    color: var(--text-color);
+}
+input {
+    border: none;
+    padding: 0;
+    outline: none;
+}
+button {
+    border: none;
+    cursor: pointer;
+}
+p {
+    margin: 0;
+}
+
+.tippy-arrow {
+    display: none;
+}

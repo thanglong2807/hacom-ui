@@ -1,0 +1,115 @@
+.header {
+    background: #f4f4f4;
+    border-bottom: 1px solid #e5e5e5;
+    height: 114px;
+}
+// header-top
+.wrapper {
+    border-bottom: 1px solid #ccc;
+}
+.header-top,
+.header-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    width: 1200px;
+    height: 37px;
+    margin: 0 auto;
+    align-items: center;
+}
+.header-top-items {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.top-item {
+    line-height: 30px;
+    font-size: var(--font-size);
+    padding: 10px 0;
+    + .top-item {
+        margin-left: 15px;
+    }
+    &.linear-gradient {
+        background: var(--color-btn);
+        border-radius: 100px;
+        padding: 0 10px;
+        color: #fff;
+        align-items: center;
+        display: flex;
+        background-size: 200% auto;
+        animation: 2s linear infinite forwards Header_gradient__BBQt4;
+    }
+}
+
+// header-bottom
+.header-bottom {
+    margin-top: 20px;
+}
+.logo {
+    max-width: 200px;
+    flex-basis: 200px;
+}
+.search {
+    border: 2px solid var(--red-color);
+    border-radius: 60px;
+    height: 31px;
+
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    .search-input {
+        width: calc(100% - 55px);
+        padding: 0 20px;
+        background: transparent;
+    }
+    .search-btn {
+        background-color: var(--red-color);
+        width: 55px;
+        border-radius: 0 60px 60px 0;
+    }
+}
+
+// header -bottom-right
+.header-bottom-right {
+    display: flex;
+    align-items: center;
+}
+
+.bottom-right-items {
+    display: flex;
+    align-items: center;
+    width: 90px;
+    height: 46px;
+    margin-left: 10px;
+    color: var(--text-color);
+    .bottom-right-item {
+        width: 55px;
+        font-size: 1.2rem;
+        margin-left: 5px;
+    }
+    .bottom-right-icon {
+        width: 16px;
+        height: 16px;
+        padding: 7px;
+        border: 1px solid #ccc;
+        border-radius: 100px;
+    }
+    .bottom-right-cart {
+        font-size: 2.4rem;
+    }
+}
+.cart {
+    position: relative;
+    .count-items-cart {
+        position: absolute;
+        color: var(--white-color);
+        background-color: var(--red-color);
+        font-size: 1.1rem;
+        width: 14px;
+        height: 14px;
+        border-radius: 100px;
+        text-align: center;
+        top: 4px;
+        left: 12px;
+    }
+}
