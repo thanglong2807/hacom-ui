@@ -1,0 +1,22 @@
+.search-menu {
+    display: block;
+    padding: 10px;
+    overflow: hidden;
+    .search-menu-img {
+        object-fit: cover;
+        width: 60px;
+        height: 60px;
+        float: left;
+    }
+    .search-menu-info {
+        font-size: 1.2rem;
+        margin-left: 65px;
+        .search-menu-name {
+            display: block;
+        }
+        .search-menu-price {
+            display: block;
+            color: var(--red-color);
+        }
+    }
+}

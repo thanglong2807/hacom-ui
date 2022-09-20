@@ -44,7 +44,6 @@ function TopHeader() {
                                                 interactive={true}
                                                 offset={[400, 123]}
                                                 placement="bottom"
-                                                // visible
                                                 render={(attrs) => (
                                                     <Menu className={cx('header-menu2')} tabIndex="-1" {...attrs}>
                                                         <div className={cx('menu2-bottom-items')}>
