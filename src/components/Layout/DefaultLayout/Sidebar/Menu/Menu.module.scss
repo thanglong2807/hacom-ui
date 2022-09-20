@@ -1,0 +1,11 @@
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.items {
+    line-height: 23px;
+    padding-left: 5px;
+
+    font-size: 1.1rem;
+}

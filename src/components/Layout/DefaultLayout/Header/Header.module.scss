@@ -1,6 +1,6 @@
 .header {
     background: #f4f4f4;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #ffffff;
     height: 114px;
 }
 // header-top
@@ -42,10 +42,55 @@
         align-items: center;
         display: flex;
         background-size: 200% auto;
-        animation: 2s linear infinite forwards Header_gradient__BBQt4;
+        animation: 2s linear infinite forwards gradient;
     }
 }
+.header-menu2 {
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    color: var(--text-color);
+}
+.menu2-items-top {
+    width: 1200px;
+    color: var(--text-color);
+    display: flex;
+    flex-wrap: wrap;
 
+    font-size: 1.8rem;
+    font-weight: 600;
+    width: 100%;
+    .header-menu2-items {
+        height: 34px;
+        padding: 2px;
+        margin-bottom: 10px;
+        display: flex;
+        border-radius: 100px;
+        width: 33.3333333333%;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.header-menu2-items:hover {
+    background-color: var(--red-color);
+    color: var(--white-color);
+}
+.menu2-items-p {
+    margin: 17px 0;
+    padding: 5px 15px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+    border: 2px solid var(--red-color);
+    border-radius: 100px;
+    display: inline-block;
+}
+
+.menu2-bottom-items {
+    display: flex;
+}
 // header-bottom
 .header-bottom {
     margin-top: 20px;
@@ -120,7 +165,6 @@
 }
 
 // Menu-header1
-
 .header-menu1 {
     background: #f4f4f4 !important;
     border-top: 1px solid #e8e8e8;
@@ -131,5 +175,36 @@
         padding: 10px;
         font-size: 12px;
         color: var(--text-color);
+        &:hover {
+            cursor: pointer;
+        }
     }
+}
+
+.btn {
+    border-radius: 3px;
+    padding: 0.5rem;
+    text-align: center;
+    height: 33px;
+
+    margin-bottom: 5px;
+    padding: 0 !important;
+    width: 100%;
+    &.btn-login,
+    &.register {
+        background-color: #fdd835;
+    }
+    &.btn-google {
+        background-color: #df4a32;
+    }
+    &.btn-fb {
+        background-color: #3b5998;
+    }
+    &.btn-zalo {
+        background-color: #0573ff;
+    }
+}
+
+.menu2-container {
+    top: 123px;
 }

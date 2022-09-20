@@ -21,6 +21,7 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    z-index: 99999999999999;
 }
 .top-item {
     line-height: 30px;
@@ -37,7 +38,7 @@
         align-items: center;
         display: flex;
         background-size: 200% auto;
-        animation: 2s linear infinite forwards Header_gradient__BBQt4;
+        animation: 2s linear infinite forwards;
     }
 }
 
