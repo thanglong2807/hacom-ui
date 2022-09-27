@@ -1,0 +1,283 @@
+.product_detail-meta {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    font-size: 1.2rem;
+    width: 100%;
+    margin: 10px 0 0;
+    padding-bottom: 10px;
+}
+.sku {
+    color: #288ad6;
+    text-transform: uppercase;
+}
+.product_detail-separator {
+    background: #aeaeae;
+    width: 1px;
+    height: 14px;
+    margin: 0 10px;
+}
+.product_detail-star {
+    background-image: url(https://hacom.vn/media/lib/star_5.png);
+    width: 76px;
+    height: 12px;
+    background-repeat: no-repeat;
+    margin-right: 5px;
+}
+.count-rate,
+.counter-number {
+    color: #288ad6;
+}
+.product_detail-separator {
+    background: #aeaeae;
+    width: 1px;
+    height: 14px;
+    margin: 0 10px;
+}
+
+//
+
+.product-summary-item {
+}
+.product-summary-item-title {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0;
+}
+.product-summary-item-ul {
+    padding-left: 17px;
+    margin: 10px 0 !important;
+    font-size: 12px;
+    // max-height: 134px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    li {
+        line-height: 1.75;
+        list-style: circle;
+        float: left;
+        width: 100%;
+    }
+}
+.viewmoretskt {
+    background: #f5f5f5;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    display: inline-block;
+    color: #333e48;
+    font-size: 13px;
+    text-transform: capitalize;
+}
+//
+.price-2021 {
+    display: inline-block;
+    padding: 20px 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    position: relative;
+    border: 1px dashed #ddd;
+    font-size: 13px;
+    p {
+        margin-top: -5px;
+    }
+    .gia-km-cu {
+        color: #555;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .gia-thang-5 {
+        background: linear-gradient(100deg, #ff424e, #fd820a);
+        color: #fff;
+        padding: 1px 10px 10px 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+        p {
+            margin: 15px;
+        }
+    }
+}
+.giakm {
+    font-size: 27px;
+    font-weight: 700;
+}
+.giakm,
+.giany {
+    color: #fff;
+}
+.giany {
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: line-through;
+}
+.tietkiem {
+    color: #bf081f;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 5px;
+}
+.tra-gop-zero,
+.vnpay100 {
+    box-sizing: border-box;
+    margin: 20px 15px 0 0;
+    max-width: fit-content;
+    max-width: -moz-fit-content;
+    position: relative;
+    padding: 0 10px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    background-color: #fad501;
+}
+.gia-quet-vnpay {
+    background: linear-gradient(46.26deg, #009edb, #005baa 96.59%);
+    color: #fff;
+    width: fit-content;
+    margin-top: 10px;
+    padding: 6px 10px;
+    border-radius: 3px;
+    span {
+        font-size: 2.4rem;
+        font-weight: 700;
+    }
+    a {
+        font-size: 12px;
+        color: var(--white-color);
+
+        &:hover {
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+    }
+}
+.product-summary-items {
+    display: flex;
+    padding-top: 15px;
+}
+.yellow-ribbon {
+    background: #f5f5f5;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 3px 5px;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
+//
+
+.box-number-detail {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.so-luong {
+    margin-right: 5px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.new-cart-quantity {
+    margin: 0 10px;
+    display: flex;
+    .quantity-change {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        line-height: 27px;
+        text-align: center;
+        font-size: 19px;
+        border: 1px solid #dfdfdf;
+        font-weight: 700;
+    }
+    .buy-quantity {
+        display: inline-block;
+        width: 40px !important;
+        height: 32px;
+        text-align: center;
+        border: 1px solid #dfdfdf;
+
+        font-weight: 700;
+    }
+}
+.them-vao-gio-nao {
+    border: 1px solid #ddd;
+    padding: 5px 15px;
+    border-radius: 0;
+    font-size: 15px;
+    font-weight: 600;
+    align-items: center;
+    span {
+        margin-left: 5px;
+    }
+}
+.box-number-quan-detail {
+    color: #ed1b24;
+    margin-left: 10px;
+    height: 32px;
+    width: 32px;
+    padding: 0;
+    text-align: center;
+    line-height: 32px;
+    border-radius: 9999px;
+}
+.like-product {
+    margin-left: 10px;
+    height: 32px;
+    width: 32px;
+    padding: 0;
+    text-align: center;
+    line-height: 32px;
+    border-radius: 9999px;
+    border: 1px solid #ddd;
+    align-items: center;
+    justify-content: center;
+    .like-product-icon {
+        color: #ed1b24;
+    }
+}
+.btn-buy {
+    width: 100%;
+    font-size: 1.2rem;
+}
+.top-buttons-th1 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.btn-buy-top {
+    padding: 15px 5px;
+    background: #ed1b24;
+    flex-basis: 0;
+    flex-grow: 1;
+    color: #fff !important;
+    text-align: center;
+    border-radius: 5px;
+    span {
+        display: block !important;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+}
+.bottom-buttons-th1 {
+    display: flex;
+    margin-bottom: 10px;
+    width: 100%;
+}
+.btn-buy-bottom {
+    padding: 15px 5px;
+    background: #277cea;
+    color: #fff !important;
+    border-radius: 5px;
+    text-align: center;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-direction: column;
+    padding: 15px 0;
+    + .btn-buy-bottom {
+        margin-left: 10px;
+    }
+    span {
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+}

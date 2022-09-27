@@ -13,18 +13,23 @@ html {
     font-size: 62.5%;
 }
 * {
-    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizespeed;
     padding: 0;
     margin: 0;
+    color: #333e48;
 }
 
+select {
+    outline: none;
+    border: none;
+}
 a[href] {
     text-decoration: none;
     color: var(--text-color);
@@ -43,7 +48,13 @@ button {
 p {
     margin: 0;
 }
-
+option {
+    font-weight: normal;
+    display: block;
+    white-space: nowrap;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
 .tippy-arrow {
     display: none;
 }
@@ -62,6 +73,7 @@ ul {
     }
 }
 // slide
+
 .swiper {
     width: 100%;
     height: 100%;
@@ -93,12 +105,35 @@ ul {
     height: 100%;
     object-fit: cover;
 }
-.swiper-horizontal {
-    // display: none;
+
+.swiper-button-next,
+.swiper-button-prev {
+    // background-color: #202c43;
+    color: #ed1b24 !important;
 }
 
+.mySwiper-leftimg {
+    height: 20%;
+    width: 373px !important;
+    padding: 10px 0;
+    margin-top: 20px;
+    .swiper-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        transform: none !important;
+        .swiper-slide {
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 5px !important;
+            border-radius: 2px;
+            width: calc((100% - 27px) / 5) !important;
+        }
+    }
+}
 // slide-menus
 .sidebar-menus {
     z-index: 999999999;
     border: 1px solid #ccc;
 }
+//@at-root

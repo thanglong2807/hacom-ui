@@ -1,0 +1,84 @@
+.product-detail-static-content {
+    width: 290px;
+    margin-top: 0;
+    min-width: 290px;
+    padding-top: 10px;
+    padding-right: 10px;
+    .static-item {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+.title-gradient {
+    font-size: 15px;
+    background: #fbfbfb;
+    border: 1px solid #e1e1e1;
+    line-height: 18px;
+    font-weight: 600;
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 5px 5px 0 0;
+    // width: 100%;
+
+    b {
+        color: #ed1b24;
+        font-weight: 700;
+        margin: 0 3px;
+    }
+}
+.static-nd {
+    font-size: 12px;
+    float: left;
+
+    line-height: 24px;
+    width: 100%;
+}
+.store-list-group-2022 {
+    padding-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    border-top: none;
+    border: 1px solid #e1e1e1;
+    border-radius: 0 0 5px 5px;
+
+    select {
+        width: 100%;
+        padding-left: 5px;
+        height: 32px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+    }
+}
+.store-province,
+.store-district {
+    padding-left: 5px;
+    width: calc(50% - 8px);
+    box-sizing: border-box;
+}
+.store-list-group-2022 {
+    padding-left: 5px;
+}
+.store-list {
+    max-height: 320px;
+    width: 100%;
+    margin-top: 10px;
+    overflow-y: scroll;
+    box-sizing: border-box;
+
+    .force-overflow {
+        min-height: 450px;
+    }
+    .item {
+        background: #f2f2f2;
+        overflow: hidden;
+        padding: 0 7px;
+        font-size: 12px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+.red {
+    color: var(--red-color);
+}

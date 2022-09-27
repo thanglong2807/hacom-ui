@@ -25,7 +25,9 @@
         }
     }
 }
-
+.sidebar-menus {
+    z-index: 999999;
+}
 .menu-sidebar {
     width: 981px;
     min-height: 474px !important;

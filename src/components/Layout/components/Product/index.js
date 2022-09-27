@@ -9,19 +9,21 @@ import MiniPc from './MiniPc';
 import Gear from './Gear';
 import Cooling from './Cooling';
 import ComputerScreen from './ComputerScreen';
+import axios from 'axios';
 const cx = classNames.bind(styles);
+
 function Product() {
     return (
         <div className={cx('wrapper')}>
             <Laptop />
             <PCgaming />
-            <PCRender />
+            {/* <PCRender />
             <LaptopGaming />
             <Accessory />
             <MiniPc />
             <Gear />
             <Cooling />
-            <ComputerScreen />
+            <ComputerScreen /> */}
         </div>
     );
 }

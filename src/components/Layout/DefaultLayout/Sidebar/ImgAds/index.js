@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Autoplay, Pagination, Navigation } from 'swiper';
+import { Autoplay, Navigation } from 'swiper';
 
 import classNames from 'classnames/bind';
 import styles from './ImgAds.module.scss';
@@ -24,11 +24,8 @@ function ImgAds() {
                         delay: 2500,
                         disableOnInteraction: false,
                     }}
-                    pagination={{
-                        clickable: true,
-                    }}
                     navigation={true}
-                    modules={[Autoplay, Pagination, Navigation]}
+                    modules={[Autoplay, Navigation]}
                     className={cx('mySwiper')}
                 >
                     <SwiperSlide>

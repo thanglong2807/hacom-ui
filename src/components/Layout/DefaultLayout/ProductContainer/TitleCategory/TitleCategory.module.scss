@@ -1,0 +1,59 @@
+.__container-items-category {
+    float: left;
+    width: 280px;
+    background-color: #fff;
+    padding: 0 10px;
+    margin-top: 10px;
+    .title {
+        line-height: 30px;
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+        border: 1px solid #d9d9d9;
+        border-radius: 3px;
+        text-transform: uppercase;
+        font-weight: 600;
+        user-select: none;
+    }
+}
+.title-items {
+    color: #333e48;
+    font-size: 14px;
+    line-height: 45px;
+    display: block;
+    user-select: none;
+    border-bottom: 1px solid #eee;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.half-li {
+    float: left;
+    width: 50%;
+}
+.brand-checker-link {
+    display: block;
+    line-height: 30px;
+    .ahihi {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 10px;
+        font-size: 12px;
+        color: #212529;
+    }
+}
+.list-brand-check {
+    .list-brand-check-li {
+        line-height: 2;
+        padding-left: 10px;
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+}
+.p-filter-list-value {
+    padding: 10px 10px 0;
+    background-color: var(--white-color);
+}
+.p-filter-item {
+    box-sizing: 0;
+    display: block;
+}

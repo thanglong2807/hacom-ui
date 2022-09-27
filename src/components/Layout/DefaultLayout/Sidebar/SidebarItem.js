@@ -6,6 +6,7 @@ import classNames from 'classnames/bind';
 
 import styles from './Sidebar.module.scss';
 import MenuContainer from './Menu';
+import { Link } from 'react-router-dom';
 const cx = classNames.bind(styles);
 function SibarItem() {
     return (
@@ -202,10 +203,10 @@ function SibarItem() {
                     )}
                 >
                     <li className={cx('items-li')}>
-                        <span>
+                        <Link to="/product">
                             <FontAwesomeIcon icon={faLaptop} />
-                            <a href="/">Laptop, Tablet, Mobile</a>
-                        </span>
+                            <span>Laptop, Tablet, Mobile</span>
+                        </Link>
                     </li>
                 </Tippy>
                 <li className={cx('items-li')}>

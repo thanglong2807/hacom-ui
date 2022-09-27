@@ -67,7 +67,7 @@ function PCgaming() {
                             <a className={cx('items-img-a')} href="/">
                                 <img
                                     className={cx('items-img-children')}
-                                    src="https://hanoicomputercdn.com/media/product/250_67191_pcgm522_17_003.jpg"
+                                    src="https://hanoicomputercdn.com/media/product/250_62693_nitrophim.png"
                                     alt="PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)"
                                 />
                             </a>
@@ -112,7 +112,7 @@ function PCgaming() {
                             <a className={cx('items-img-a')} href="/">
                                 <img
                                     className={cx('items-img-children')}
-                                    src="https://hanoicomputercdn.com/media/product/250_67191_pcgm522_17_003.jpg"
+                                    src="https://hanoicomputercdn.com/media/product/250_62693_nitrophim.png"
                                     alt="PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)"
                                 />
                             </a>
@@ -157,7 +157,7 @@ function PCgaming() {
                             <a className={cx('items-img-a')} href="/">
                                 <img
                                     className={cx('items-img-children')}
-                                    src="https://hanoicomputercdn.com/media/product/250_67191_pcgm522_17_003.jpg"
+                                    src="https://hanoicomputercdn.com/media/product/250_62693_nitrophim.png"
                                     alt="PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)"
                                 />
                             </a>
@@ -202,7 +202,7 @@ function PCgaming() {
                             <a className={cx('items-img-a')} href="/">
                                 <img
                                     className={cx('items-img-children')}
-                                    src="https://hanoicomputercdn.com/media/product/250_67191_pcgm522_17_003.jpg"
+                                    src="https://hanoicomputercdn.com/media/product/250_62693_nitrophim.png"
                                     alt="PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)"
                                 />
                             </a>

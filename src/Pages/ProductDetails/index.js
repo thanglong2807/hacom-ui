@@ -1,5 +1,7 @@
+import ProductDetail from '~/components/Layout/DefaultLayout/ProductDetails';
+
 function ProductDetails() {
-    return <h1>trang ProductDetails</h1>;
+    return <ProductDetail />;
 }
 
 export default ProductDetails;

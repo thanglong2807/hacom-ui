@@ -9,7 +9,7 @@ import { faCartShopping, faMagnifyingGlass, faTemperature0, faWrench } from '@fo
 import TopHeader from './TopHeader';
 import { useState, useEffect, useRef } from 'react';
 import MenuSearch from '../MenuSearch';
-
+import request from '~/utils/request';
 let cx = classNames.bind(styles);
 function Header() {
     const [searchValue, setSearchValue] = useState('');
@@ -22,10 +22,16 @@ function Header() {
             return;
         }
 
-        fetch(`https://6329b91ad2c97d8c526eab02.mockapi.io/product?namesearch=${searchValue}`)
-            .then((res) => res.json())
+        request
+            .get('/', {
+                params: {
+                    namesearch: searchValue,
+                },
+            })
+
             .then((res) => {
-                setSearchResult(res);
+                console.log(res);
+                setSearchResult(res.data);
             });
     }, [searchValue]);
 
@@ -43,6 +49,7 @@ function Header() {
                     visible={showResult && searchResult.length > 0}
                     onClickOutside={handleHideResult}
                     placement="bottom"
+                    zIndex={999999999}
                     interactive={true}
                     render={(attrs) => (
                         <div className={cx('search-menu-container')} tabIndex="-1" {...attrs}>
