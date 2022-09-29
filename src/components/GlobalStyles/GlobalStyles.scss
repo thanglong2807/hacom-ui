@@ -7,6 +7,7 @@
     --red-color: #ed1b24;
     --font-size: 11px;
     --white-color: #fff;
+    --black-color: #000;
 }
 
 html {
@@ -137,3 +138,14 @@ ul {
     border: 1px solid #ccc;
 }
 //@at-root
+.border-radius {
+    border-radius: 5px;
+}
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.red {
+    color: var(--red-color);
+}

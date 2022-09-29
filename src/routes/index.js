@@ -3,6 +3,7 @@ import Home from '~/Pages/Home';
 import ProductDetails from '~/Pages/ProductDetails';
 // import { HeaderOnly } from '~/components/Layout';
 import Product from '~/Pages/Product';
+import Cart from '~/Pages/Cart';
 const publicRoutes = [
     {
         path: '/',
@@ -15,6 +16,10 @@ const publicRoutes = [
     {
         path: `/ProductDetails`,
         component: ProductDetails,
+    },
+    {
+        path: `/gio-hang`,
+        component: Cart,
     },
 ];
 

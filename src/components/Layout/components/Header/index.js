@@ -7,7 +7,7 @@ let cx = classNames.bind(styles);
 function Header() {
     return (
         <header className={cx('header')}>
-            <div className={cx('wrapper')}>
+            <div className={cx('wrappe')}>
                 <div className={cx('header-top')}>
                     <div className={cx('header-top-items')}>
                         <div className={cx('top-item')}>
@@ -44,7 +44,7 @@ function Header() {
             </div>
             <div className={cx('header-bottom')}>
                 <div className={cx('logo')}>
-                    <img src="https://hanoicomputercdn.com/media/lib/01-09-2022/logo-hacom.png" />
+                    <img src="https://hanoicomputercdn.com/media/lib/01-09-2022/logo-hacom.png" alt="img" />
                 </div>
                 <div className={cx('search')}>
                     <input className={cx('search-input')} placeholder="Nhập sản phẩm từ khóa cần tìm" />

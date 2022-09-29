@@ -1,0 +1,229 @@
+.product__container-title {
+    width: 100%;
+    background-color: unset;
+    min-height: 450px;
+    margin-top: 40px;
+}
+.product-title-span {
+    .product-title-a + .product-title-a::before {
+        content: '>';
+        padding: 0 6px;
+        font-size: 1.4rem;
+        margin: 0 10px 0 5px;
+        font-weight: 600;
+    }
+}
+.product-title-a {
+    font-weight: 600;
+    font-size: 1.5rem;
+    &.home {
+        line-height: 35px;
+        color: #555;
+    }
+    &.items {
+        color: #243a76;
+    }
+}
+.title-h3 {
+    margin: 0;
+    color: var(--black-color);
+    span {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #555;
+    }
+}
+.no-product-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+        width: 187px;
+        height: 164px;
+    }
+    p {
+        margin: 20px;
+        font-size: 14px;
+    }
+    a {
+        width: 180px;
+        border: none;
+        line-height: 40px;
+        border-radius: 5px;
+        font-size: 14px;
+        color: #fff;
+        background: #f78d1c;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+//
+
+.cart-container {
+    display: flex;
+}
+.cart-container-left {
+    display: flex;
+    flex-direction: column;
+    width: 72%;
+}
+.cart-container-left-items {
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    background: #fff;
+    display: flex;
+}
+.cart-product-items-title {
+    width: calc(100% - 465px);
+    display: flex;
+    align-items: center;
+    input {
+        margin-right: 5px;
+    }
+}
+.cart-product-items-price {
+    width: 185px;
+    &.price-item {
+        color: #000;
+        margin-right: 5px;
+    }
+}
+.cart-product-items-amount {
+    width: 125px;
+}
+.cart-product-items-into-money {
+    width: 125px;
+}
+.cart-product-items-delete {
+    width: 30px;
+}
+
+//
+
+.product-items {
+    display: flex;
+}
+.product-items-img {
+    width: 87px;
+    height: 87px;
+}
+.product-items-chile {
+    a {
+        font-size: 1.4rem;
+    }
+    span {
+        font-size: 1.2rem;
+        margin: 10px 0;
+        display: block;
+        b {
+            font-weight: 700;
+        }
+    }
+}
+
+.gift {
+    display: flex;
+    align-items: center;
+    .gift-items {
+        font-size: 14px;
+        padding: 5px 10px;
+        margin-right: 10px;
+        border: 1px solid #d8d8d8;
+        border-radius: 2px;
+    }
+}
+.gift-icon {
+    padding-right: 8px;
+}
+
+//
+.amount-items-span {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    a,
+    input {
+        width: 32px;
+        height: 32px;
+        line-height: 27px;
+        text-align: center;
+
+        border: 1px solid #dfdfdf;
+        font-weight: 700;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.pay {
+    display: flex;
+    flex-direction: column;
+    width: calc(28% - 10px);
+}
+.pay-gift {
+    width: 100%;
+    display: flex;
+    float: left;
+    border-radius: 5px;
+    background: #fff;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    overflow: hidden;
+    input {
+        width: calc(100% - 73px);
+        float: left;
+        height: 36px;
+        padding: 10 0px;
+        border: 1px solid #e1e1e1;
+        border-right: none;
+        border-radius: 3px 0 0 3px;
+    }
+    button {
+        width: 75px;
+        padding: 0;
+        line-height: 36px;
+        text-align: center;
+        float: right;
+        border: none;
+        border-radius: 0 3px 3px 0;
+        font-weight: 500;
+        font-size: 13px;
+        display: inline;
+        cursor: pointer;
+        background: #243a76;
+        color: #fff;
+    }
+}
+.pay-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 1.4rem;
+    border-bottom: 1px solid #e1e1e1;
+}
+.pay-price {
+    font-weight: 700;
+}
+.pay-price-pro {
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+.pay-vat {
+    float: left;
+    padding: 10px 0;
+    text-align: right;
+    font-size: 14px;
+}
+.pay-submit {
+    width: 100%;
+    float: left;
+    text-align: center;
+    border: none;
+    line-height: 40px;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    background: #243a76;
+}

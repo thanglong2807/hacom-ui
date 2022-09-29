@@ -10,6 +10,7 @@ import TopHeader from './TopHeader';
 import { useState, useEffect, useRef } from 'react';
 import MenuSearch from '../MenuSearch';
 import request from '~/utils/request';
+import { Link } from 'react-router-dom';
 let cx = classNames.bind(styles);
 function Header() {
     const [searchValue, setSearchValue] = useState('');
@@ -30,7 +31,6 @@ function Header() {
             })
 
             .then((res) => {
-                console.log(res);
                 setSearchResult(res.data);
             });
     }, [searchValue]);
@@ -88,7 +88,9 @@ function Header() {
                     <div className={cx('bottom-right-items', 'cart')}>
                         <FontAwesomeIcon className={cx('bottom-right-cart')} icon={faCartShopping} />
                         <b className={cx('count-items-cart')}>0</b>
-                        <span className={cx('bottom-right-item')}>Giỏ hàng</span>
+                        <span className={cx('bottom-right-item')}>
+                            <Link to="/gio-hang">Giỏ hàng</Link>
+                        </span>
                     </div>
                 </div>
             </div>
