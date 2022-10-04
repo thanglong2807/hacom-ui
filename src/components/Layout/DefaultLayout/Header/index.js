@@ -20,13 +20,10 @@ function Header() {
     const [cart, setCart] = useState(0);
 
     useEffect(() => {
-        if (data === []) {
-        } else {
-            const getLocalItems = JSON.parse(localStorage.getItem('data'));
-            setData(getLocalItems);
-            console.log(data);
-            setCart(data.length);
-        }
+        const getLocalItems = JSON.parse(localStorage.getItem('data'));
+        setData(getLocalItems);
+        console.log(data);
+        setCart(data.length);
     }, []);
 
     const inputRef = useRef();
@@ -98,11 +95,11 @@ function Header() {
                         <span className={cx('bottom-right-item')}>Xây dựng cấu hình</span>
                     </div>
                     <div className={cx('bottom-right-items', 'cart')}>
-                        <FontAwesomeIcon className={cx('bottom-right-cart')} icon={faCartShopping} />
-                        <b className={cx('count-items-cart')}>{cart}</b>
-                        <span className={cx('bottom-right-item')}>
-                            <Link to="/gio-hang">Giỏ hàng</Link>
-                        </span>
+                        <Link to="gio-hang">
+                            <FontAwesomeIcon className={cx('bottom-right-cart')} icon={faCartShopping} />
+                            <b className={cx('count-items-cart')}>{cart}</b>
+                            <span className={cx('bottom-right-item')}>Giỏ hàng</span>
+                        </Link>
                     </div>
                 </div>
             </div>

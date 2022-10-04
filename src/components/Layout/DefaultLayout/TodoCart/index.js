@@ -62,7 +62,9 @@ function TodoCart() {
                                     <div className={cx('cart-product-items-amount')}> Số lượng</div>
                                     <div className={cx('cart-product-items-into-money')}> Thành tiền</div>
                                     <div className={cx('cart-product-items-delete')}>
-                                        <FontAwesomeIcon icon={faTrash} />
+                                        <button onClick={removeItem}>
+                                            <FontAwesomeIcon icon={faTrash} />
+                                        </button>
                                     </div>
                                 </div>
                                 {data.map((item, index) => (
@@ -126,7 +128,7 @@ function TodoCart() {
                                             {item.newprice * item.count}
                                         </div>
                                         <div className={cx('cart-product-items-delete')}>
-                                            <button onClick={removeItem}>
+                                            <button>
                                                 <FontAwesomeIcon icon={faTrash} />
                                             </button>
                                         </div>
