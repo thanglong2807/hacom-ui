@@ -9,9 +9,24 @@ import { Autoplay, Navigation } from 'swiper';
 
 import classNames from 'classnames/bind';
 import styles from './ImgAds.module.scss';
+import { useEffect, useState } from 'react';
+import request from '~/utils/request';
 
 const cx = classNames.bind(styles);
 function ImgAds() {
+    const [productItem, setProductItem] = useState([]);
+
+    useEffect(() => {
+        const getProduct = async () => {
+            try {
+                const res = await request.get(`adsimg`);
+                setProductItem(res.data);
+            } catch (error) {
+                console.log(error.message);
+            }
+        };
+        getProduct();
+    }, []);
     return (
         <div className={cx('layout-img')}>
             <div className={cx('img-ads-container')}>
@@ -28,48 +43,11 @@ function ImgAds() {
                     modules={[Autoplay, Navigation]}
                     className={cx('mySwiper', 'border-radius')}
                 >
-                    <SwiperSlide>
-                        <img
-                            src="https://hanoicomputercdn.com/media/banner/01_Aug3eb48b729ff81905359713b5a8db9661.jpg"
-                            alt="anh"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img
-                            src="https://hanoicomputercdn.com/media/banner/05_Sep3f78cebbc94e5579898d12f0e5fe6fe6.png"
-                            alt="anh"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img
-                            src="https://hanoicomputercdn.com/media/banner/01_Aug3eb48b729ff81905359713b5a8db9661.jpg"
-                            alt="anh"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img
-                            src="https://hanoicomputercdn.com/media/banner/05_Sep3f78cebbc94e5579898d12f0e5fe6fe6.png"
-                            alt="anh"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img
-                            src="https://hanoicomputercdn.com/media/banner/01_Aug3eb48b729ff81905359713b5a8db9661.jpg"
-                            alt="anh"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img
-                            src="https://hanoicomputercdn.com/media/banner/05_Sep3f78cebbc94e5579898d12f0e5fe6fe6.png"
-                            alt="anh"
-                        />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img
-                            src="https://hanoicomputercdn.com/media/banner/05_Sep3f78cebbc94e5579898d12f0e5fe6fe6.png"
-                            alt="anh"
-                        />
-                    </SwiperSlide>
+                    {productItem.map((result) => (
+                        <SwiperSlide>
+                            <img src={result.avatar} alt="anh" />
+                        </SwiperSlide>
+                    ))}
                 </Swiper>
             </div>
             <div className={cx('slide-right')}>

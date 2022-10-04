@@ -9,6 +9,8 @@ function ProductImgRight({ data }) {
     const [count, setCount] = useState(1);
     const [items, setItems] = useState([]);
 
+    // console.log(data);
+
     useEffect(() => {
         const items = JSON.parse(localStorage.getItem('items'));
         if (items) {
@@ -16,11 +18,55 @@ function ProductImgRight({ data }) {
         }
     }, []);
 
+    const addToCart = () => {
+        alert('đã thêm thành công');
+        // lay du lieu tu local ve
+
+        // [] , [data]
+
+        // khi them 1 san pham vao gio
+
+        // lay tat ca san pham cu + moi
+
+        let arr = [];
+
+        let getLocalItems = JSON.parse(localStorage.getItem('data'));
+
+        if (!getLocalItems) {
+            localStorage.setItem('data', JSON.stringify([]));
+            getLocalItems = JSON.parse(localStorage.getItem('data'));
+        }
+
+        const findItem = getLocalItems.find((item) => {
+            return item.id === data.id;
+        });
+
+        if (findItem) {
+            findItem.count += 1;
+
+            const newData = getLocalItems.map((item) => {
+                if (item.id === findItem.id) {
+                    return findItem;
+                }
+                return item;
+            });
+
+            localStorage.setItem('data', JSON.stringify(newData));
+
+            // 1a 1b
+        } else {
+            data.count = 1;
+            arr = [...getLocalItems, data];
+
+            localStorage.setItem('data', JSON.stringify(arr));
+        }
+    };
+
     return (
         <div>
             <div className={cx('product_detail-meta')}>
                 <div className={cx('product_detail-sku')}>
-                    Mã SP: <span className={cx('sku')}>LTAU733</span>
+                    Mã SP: <span className={cx('sku')}>LTAU{data.id}</span>
                 </div>
                 <div className={cx('product_detail-separator')}></div>
                 Đánh giá:
@@ -43,43 +89,31 @@ function ProductImgRight({ data }) {
                 <div className={cx('product-summary-item-title')}>Thông số sản phẩm</div>
 
                 <ul className={cx('product-summary-item-ul')}>
-                    <li>CPU Intel® Core™ i5-12500H Processor (18MB cache, up to 4.5GHz)</li>
-
-                    <li>RAM 8GB DDR4 Onboard ( còn 1 khe ram trống)</li>
-
-                    <li>SSD 512GB M.2 NVMe™ PCIe® 3.0</li>
-
-                    <li>VGA Intel® Iris® Xe Graphics</li>
-
-                    <li>Màn hình 15.6Inch OLED FHD</li>
-
-                    <li>Backlit Chiclet Keyboard</li>
-
-                    <li>Màu: Bạc</li>
-
-                    <li>OS Windows 11 Home SL</li>
+                    {data.tentimkiem.map((result) => (
+                        <>
+                            <li>{result}</li>
+                        </>
+                    ))}
                 </ul>
             </div>
             <div className={cx('price-2021')}>
                 <p>Giá khuyến mại:</p>
-                <span className={cx('gia-km-cu')}>19.299.000₫</span>
+                <span className={cx('gia-km-cu')}>1.299.000₫</span>
                 <div className={cx('gia-thang-5')}>
                     <p>Giá đặc biệt ưu đãi tháng 9:</p>
 
-                    <strong className={cx('giakm')} data-price={data.oldprice}>
-                        {data.oldprice}
-                    </strong>
+                    <strong className={cx('giakm')}>{data.newprice}₫</strong>
 
-                    <strong className={cx('giany')}> 19.999.000₫ </strong>
+                    <strong className={cx('giany')}>{data.oldprice}₫ </strong>
 
-                    <label className={cx('tietkiem')}>Tiết kiệm 1.000.000₫</label>
+                    <label className={cx('tietkiem')}>Tiết kiệm {data.oldprice - data.newprice}</label>
                 </div>
 
                 <div className={cx('tra-gop-zero')}>Ưu đãi trả góp 0%</div>
 
                 <div className={cx('gia-quet-vnpay')}>
                     Giá VNPAY:
-                    <span>18.699.000₫</span>
+                    <span>{data.newprice}₫</span>
                     <a href="/">Click xem chi tiết</a>
                 </div>
 
@@ -102,9 +136,9 @@ function ProductImgRight({ data }) {
                         +
                     </button>
                 </span>
-                <Link to="/gio-hang" className={cx('them-vao-gio-nao')}>
+                <button to="/gio-hang" className={cx('them-vao-gio-nao')} onClick={() => addToCart()}>
                     <FontAwesomeIcon icon={faCartPlus} /> <span>Thêm vào giỏ hàng</span>
-                </Link>
+                </button>
 
                 <a className={cx('like-product')} href="/like" title="Thích sản phẩm này">
                     <FontAwesomeIcon className={cx('like-product-icon')} icon={faHeart} />

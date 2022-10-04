@@ -9,3 +9,41 @@
 
     font-size: 1.1rem;
 }
+.menu-sidebar-item {
+    // display: flex;
+    // flex-direction: column;
+    flex: 0 0 20%;
+    max-width: 20%;
+    padding: 2px 0 0;
+    .red {
+        color: var(--red-color);
+    }
+}
+.items-logo {
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+.items-img {
+    background: rgba(0, 0, 0, 0.04);
+    float: left;
+    display: flex;
+    align-items: center;
+    width: calc(50% - 5px);
+    margin-right: 5px;
+    margin-top: 5px;
+    height: 40px;
+}
+.width-img-a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+
+    .width-img {
+        max-width: 84px;
+        transform: scale(0.8);
+        overflow: hidden;
+    }
+}

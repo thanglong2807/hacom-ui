@@ -109,7 +109,9 @@ ul {
 
 .swiper-button-next,
 .swiper-button-prev {
-    // background-color: #202c43;
+    background-color: #202c43;
+    border-radius: 10px;
+    opacity: 0.5;
     color: #ed1b24 !important;
 }
 

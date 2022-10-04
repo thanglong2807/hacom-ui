@@ -110,6 +110,7 @@
     height: 87px;
 }
 .product-items-chile {
+    padding-left: 8px !important;
     a {
         font-size: 1.4rem;
     }
@@ -143,7 +144,7 @@
     display: flex;
     align-items: center;
     font-size: 1.4rem;
-    a,
+    button,
     input {
         width: 32px;
         height: 32px;

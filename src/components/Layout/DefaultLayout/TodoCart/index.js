@@ -1,11 +1,30 @@
 import { faAnglesDown, faGift, faMinus, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './TodoCart.module.scss';
 const cx = classNames.bind(styles);
 function TodoCart() {
-    const haveProduct = true;
+    const [count, setCount] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        if (data === []) {
+            setLoading(false);
+        } else {
+            setLoading(false);
+            const getLocalItems = JSON.parse(localStorage.getItem('data'));
+            setData(getLocalItems);
+        }
+    }, []);
+
+    const removeItem = () => {
+        localStorage.removeItem('data');
+        setData([]);
+    };
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('product__container-title')}>
@@ -17,7 +36,7 @@ function TodoCart() {
                         <span>Giỏ hàng của bạn</span>
                     </Link>
                 </span>
-                {!haveProduct ? (
+                {loading ? (
                     <>
                         <h3 className={cx('title-h3')}>
                             Giỏ hàng <span>(0 sản phẩm)</span>
@@ -31,7 +50,7 @@ function TodoCart() {
                 ) : (
                     <div>
                         <h3 className={cx('title-h3')}>
-                            Giỏ hàng <span>(0 sản phẩm)</span>
+                            Giỏ hàng <span>{`(${data.length} sản phẩm)`}</span>
                         </h3>
                         <div className={cx('cart-container')}>
                             <div className={cx('cart-container-left')}>
@@ -46,60 +65,73 @@ function TodoCart() {
                                         <FontAwesomeIcon icon={faTrash} />
                                     </div>
                                 </div>
-                                <div className={cx('cart-container-left-items')}>
-                                    <div className={cx('cart-product-items-title')}>
-                                        <input type="checkbox" />
-                                        <div className={cx('product-items')}>
-                                            <Link to="/">
-                                                <img
-                                                    className={cx('product-items-img')}
-                                                    src="https://hanoicomputercdn.com/media/product/250_60848_thermal_take_core_p3_custom__1_.jpg"
-                                                    alt=""
-                                                />
-                                            </Link>
-                                            <div className={cx('product-items-chile')}>
+                                {data.map((item, index) => (
+                                    <div className={cx('cart-container-left-items')}>
+                                        <div className={cx('cart-product-items-title')}>
+                                            <input type="checkbox" />
+                                            <div className={cx('product-items')}>
                                                 <Link to="/">
-                                                    Trọn bộ tản nhiệt nước PC Thermaltake Core P3 - HT-111 (Lắp ráp theo
-                                                    yêu cầu)
+                                                    <img
+                                                        className={cx('product-items-img')}
+                                                        src={item.anhsp[0]}
+                                                        alt=""
+                                                    />
                                                 </Link>
-                                                <span>
-                                                    Mã SP:<b> PCMD121</b>
-                                                </span>
-                                                <div className={cx('gift')}>
-                                                    <div className={cx('gift-items')}>
-                                                        <FontAwesomeIcon className={cx('gift-icon')} icon={faGift} />
-                                                        Khuyễn mại
-                                                    </div>
-                                                    <div className={cx('gift-items')}>
-                                                        <FontAwesomeIcon
-                                                            className={cx('gift-icon')}
-                                                            icon={faAnglesDown}
-                                                        />
-                                                        Mua sau
+                                                <div className={cx('product-items-chile')}>
+                                                    <Link to="/">{item.tensp}</Link>
+                                                    <span>
+                                                        Mã SP:<b> {item.id} </b>
+                                                    </span>
+                                                    <div className={cx('gift')}>
+                                                        <div className={cx('gift-items')}>
+                                                            <FontAwesomeIcon
+                                                                className={cx('gift-icon')}
+                                                                icon={faGift}
+                                                            />
+                                                            Khuyễn mại
+                                                        </div>
+                                                        <div className={cx('gift-items')}>
+                                                            <FontAwesomeIcon
+                                                                className={cx('gift-icon')}
+                                                                icon={faAnglesDown}
+                                                            />
+                                                            Mua sau
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className={cx('cart-product-items-price', 'price-item')}> 6.967.000₫</div>
-                                    <div className={cx('cart-product-items-amount')}>
-                                        <div className={cx('amount-items')}>
-                                            <span className={cx('amount-items-span')}>
-                                                <Link to="/" data-value="-1" title="tru">
-                                                    <FontAwesomeIcon icon={faMinus} />
-                                                </Link>
-                                                <input value="1" size="5" />
-                                                <Link to="/" data-value="1" title="them">
-                                                    <FontAwesomeIcon icon={faPlus} />
-                                                </Link>
-                                            </span>
+                                        <div className={cx('cart-product-items-price', 'price-item')}>
+                                            {item.newprice}
+                                        </div>
+                                        <div className={cx('cart-product-items-amount')}>
+                                            <div className={cx('amount-items')}>
+                                                <span className={cx('amount-items-span')}>
+                                                    <button
+                                                        onClick={() => {
+                                                            item.count > 1 && setCount((item.count -= 1));
+                                                        }}
+                                                        title="tru"
+                                                    >
+                                                        <FontAwesomeIcon icon={faMinus} />
+                                                    </button>
+                                                    <input value={item.count} size="5" />
+                                                    <button onClick={() => setCount((item.count += 1))} title="them">
+                                                        <FontAwesomeIcon icon={faPlus} />
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div className={cx('cart-product-items-into-money', 'red')}>
+                                            {item.newprice * item.count}
+                                        </div>
+                                        <div className={cx('cart-product-items-delete')}>
+                                            <button onClick={removeItem}>
+                                                <FontAwesomeIcon icon={faTrash} />
+                                            </button>
                                         </div>
                                     </div>
-                                    <div className={cx('cart-product-items-into-money', 'red')}> 6.967.000₫</div>
-                                    <div className={cx('cart-product-items-delete')}>
-                                        <FontAwesomeIcon icon={faTrash} />
-                                    </div>
-                                </div>
+                                ))}
                             </div>
                             <div className={cx('pay')}>
                                 <div className={cx('pay-gift')}>

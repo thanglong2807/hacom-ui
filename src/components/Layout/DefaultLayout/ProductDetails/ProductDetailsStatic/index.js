@@ -173,7 +173,6 @@ function ProductDetailsStatic() {
                     </div>
                 </div>
             </div>
-            {/*  */}
         </div>
     );
 }

@@ -16,8 +16,9 @@ import React, { useState } from 'react';
 
 const cx = classNames.bind(styles);
 
-function ProductImgLeft() {
+function ProductImgLeft({ data }) {
     const [thumbsSwiper, setThumbsSwiper] = useState();
+
     return (
         <div className={cx('items-img')}>
             <Swiper
@@ -32,36 +33,11 @@ function ProductImgLeft() {
                 modules={[FreeMode, Navigation, Thumbs]}
                 className={cx('mySwiper2')}
             >
-                <SwiperSlide>
-                    <img src="https://swiperjs.com/demos/images/nature-1.jpg" alt="anh" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src="https://swiperjs.com/demos/images/nature-2.jpg" alt="anh" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src="https://swiperjs.com/demos/images/nature-3.jpg" alt="anh" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src="https://swiperjs.com/demos/images/nature-4.jpg" alt="anh" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src="https://swiperjs.com/demos/images/nature-5.jpg" alt="anh" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src="https://swiperjs.com/demos/images/nature-6.jpg" alt="anh" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src="https://swiperjs.com/demos/images/nature-7.jpg" alt="anh" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src="https://swiperjs.com/demos/images/nature-8.jpg" alt="anh" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src="https://swiperjs.com/demos/images/nature-9.jpg" alt="anh" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src="https://swiperjs.com/demos/images/nature-10.jpg" alt="anh" />
-                </SwiperSlide>
+                {data.map((result) => (
+                    <SwiperSlide>
+                        <img src={result} alt="anh" />
+                    </SwiperSlide>
+                ))}
             </Swiper>
             <Swiper
                 onSwiper={setThumbsSwiper}
@@ -73,76 +49,11 @@ function ProductImgLeft() {
                 modules={[FreeMode, Navigation, Thumbs]}
                 className={cx('mySwiper-leftimg')}
             >
-                <SwiperSlide>
-                    <img
-                        className={cx('items-left-img')}
-                        src="https://swiperjs.com/demos/images/nature-1.jpg"
-                        alt="anh"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img
-                        className={cx('items-left-img')}
-                        src="https://swiperjs.com/demos/images/nature-2.jpg"
-                        alt="anh"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img
-                        className={cx('items-left-img')}
-                        src="https://swiperjs.com/demos/images/nature-3.jpg"
-                        alt="anh"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img
-                        className={cx('items-left-img')}
-                        src="https://swiperjs.com/demos/images/nature-4.jpg"
-                        alt="anh"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img
-                        className={cx('items-left-img')}
-                        src="https://swiperjs.com/demos/images/nature-5.jpg"
-                        alt="anh"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img
-                        className={cx('items-left-img')}
-                        src="https://swiperjs.com/demos/images/nature-6.jpg"
-                        alt="anh"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img
-                        className={cx('items-left-img')}
-                        src="https://swiperjs.com/demos/images/nature-7.jpg"
-                        alt="anh"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img
-                        className={cx('items-left-img')}
-                        src="https://swiperjs.com/demos/images/nature-8.jpg"
-                        alt="anh"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img
-                        className={cx('items-left-img')}
-                        src="https://swiperjs.com/demos/images/nature-9.jpg"
-                        alt="anh"
-                    />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img
-                        className={cx('items-left-img')}
-                        src="https://swiperjs.com/demos/images/nature-10.jpg"
-                        alt="anh"
-                    />
-                </SwiperSlide>
+                {data.map((result) => (
+                    <SwiperSlide>
+                        <img className={cx('items-left-img')} src={result} alt="anh" />
+                    </SwiperSlide>
+                ))}
             </Swiper>
         </div>
     );

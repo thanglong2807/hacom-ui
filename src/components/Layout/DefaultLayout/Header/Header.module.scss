@@ -60,13 +60,12 @@
     color: var(--text-color);
     display: flex;
     flex-wrap: wrap;
-
+    padding-top: 20px;
     font-size: 1.8rem;
     font-weight: 600;
     width: 100%;
     .header-menu2-items {
         height: 34px;
-        padding: 2px;
         margin-bottom: 10px;
         display: flex;
         border-radius: 100px;
@@ -75,6 +74,7 @@
         justify-content: center;
     }
 }
+.active,
 .header-menu2-items:hover {
     background-color: var(--red-color);
     color: var(--white-color);

@@ -16,6 +16,18 @@ function Header() {
     const [searchValue, setSearchValue] = useState('');
     const [searchResult, setSearchResult] = useState([]);
     const [showResult, setShowResult] = useState(true);
+    const [data, setData] = useState([]);
+    const [cart, setCart] = useState(0);
+
+    useEffect(() => {
+        if (data === []) {
+        } else {
+            const getLocalItems = JSON.parse(localStorage.getItem('data'));
+            setData(getLocalItems);
+            console.log(data);
+            setCart(data.length);
+        }
+    }, []);
 
     const inputRef = useRef();
     useEffect(() => {
@@ -23,16 +35,15 @@ function Header() {
             return;
         }
 
-        request
-            .get('/', {
-                params: {
-                    namesearch: searchValue,
-                },
-            })
-
-            .then((res) => {
+        const getProduct = async () => {
+            try {
+                const res = await request.get(`product?tentimkiem=${searchValue}`);
                 setSearchResult(res.data);
-            });
+            } catch (error) {
+                console.log(error.message);
+            }
+        };
+        getProduct();
     }, [searchValue]);
 
     const handleHideResult = () => {
@@ -42,14 +53,15 @@ function Header() {
         <header className={cx('header')}>
             <TopHeader />
             <div className={cx('header-bottom')}>
-                <div className={cx('logo')}>
+                <Link to="/" className={cx('logo')}>
                     <img src="https://hanoicomputercdn.com/media/lib/01-09-2022/logo-hacom.png" />
-                </div>
+                </Link>
                 <Tippy
                     visible={showResult && searchResult.length > 0}
                     onClickOutside={handleHideResult}
                     placement="bottom"
                     zIndex={999999999}
+                    maxWidth={350}
                     interactive={true}
                     render={(attrs) => (
                         <div className={cx('search-menu-container')} tabIndex="-1" {...attrs}>
@@ -87,7 +99,7 @@ function Header() {
                     </div>
                     <div className={cx('bottom-right-items', 'cart')}>
                         <FontAwesomeIcon className={cx('bottom-right-cart')} icon={faCartShopping} />
-                        <b className={cx('count-items-cart')}>0</b>
+                        <b className={cx('count-items-cart')}>{cart}</b>
                         <span className={cx('bottom-right-item')}>
                             <Link to="/gio-hang">Giỏ hàng</Link>
                         </span>

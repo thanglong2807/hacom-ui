@@ -2,7 +2,8 @@ import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping, faMagnifyingGlass, faTemperature0, faWrench } from '@fortawesome/free-solid-svg-icons';
-
+import Tippy from '@tippyjs/react/headless';
+import 'tippy.js/dist/tippy.css'; // optional
 let cx = classNames.bind(styles);
 function Header() {
     return (
@@ -61,11 +62,23 @@ function Header() {
                         <FontAwesomeIcon className={cx('bottom-right-icon')} icon={faTemperature0} />
                         <span className={cx('bottom-right-item')}>Xây dựng cấu hình</span>
                     </div>
-                    <div className={cx('bottom-right-items', 'cart')}>
-                        <FontAwesomeIcon className={cx('bottom-right-cart')} icon={faCartShopping} />
-                        <b className={cx('count-items-cart')}>0</b>
-                        <span className={cx('bottom-right-item')}>Giỏ hàng</span>
-                    </div>
+                    <Tippy
+                        // placement="bottom"
+                        // zIndex={999999999}
+                        interactive={true}
+                        visible
+                        render={(attrs) => (
+                            <div className tabIndex="-1" {...attrs}>
+                                hello
+                            </div>
+                        )}
+                    >
+                        <div className={cx('bottom-right-items', 'cart')}>
+                            <FontAwesomeIcon className={cx('bottom-right-cart')} icon={faCartShopping} />
+                            <b className={cx('count-items-cart')}>0</b>
+                            <span className={cx('bottom-right-item')}>Giỏ hàng</span>
+                        </div>
+                    </Tippy>
                 </div>
             </div>
         </header>

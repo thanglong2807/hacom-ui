@@ -1,10 +1,16 @@
 import classNames from 'classnames/bind';
+import { useState } from 'react';
 
-import { Link } from 'react-router-dom';
 import styles from './ProductFilter.module.scss';
 
 const cx = classNames.bind(styles);
-function ProductFilter() {
+const active = 'active';
+const inactive = null;
+function ProductFilter({ data }) {
+    const [selected, setSelected] = useState(1);
+    const handleClick = (item) => () => {
+        setSelected(item);
+    };
     return (
         <div className={cx('__container-items-products')}>
             <div className={cx('warehouse')}>
@@ -58,22 +64,12 @@ function ProductFilter() {
                 </div>
                 <div className={cx('new-warehouse-item')}>
                     <div className="list-n">
-                        <Link className={cx('new-sort-zone')} to="/">
-                            Hàng Mới
-                        </Link>
+                        <button className={cx('new-sort-zone')}>Hàng Mới</button>
 
-                        <Link className={cx('new-sort-zone')} to="/">
-                            Xem Nhiều
-                        </Link>
-                        <Link className={cx('new-sort-zone')} to="/">
-                            Giá Giảm Nhiều
-                        </Link>
-                        <Link className={cx('new-sort-zone')} to="/">
-                            Giá Tăng Dần
-                        </Link>
-                        <Link className={cx('new-sort-zone')} to="/">
-                            Giá Giảm Dần
-                        </Link>
+                        <button className={cx('new-sort-zone')}>Xem Nhiều</button>
+                        <button className={cx('new-sort-zone')}>Giá Giảm Nhiều</button>
+                        <button className={cx('new-sort-zone')}>Giá Tăng Dần</button>
+                        <button className={cx('new-sort-zone')}>Giá Giảm Dần</button>
                     </div>
 
                     <select title="Sắp xếp theo" className={cx('list-sort')}>
@@ -85,37 +81,38 @@ function ProductFilter() {
                     </select>
 
                     <div className={cx('paging', 'new-sort-zone-page')}>
-                        <Link to="/" className={cx('current', 'btn-page')}>
+                        <button
+                            onClick={handleClick(1)}
+                            className={cx('current', 'btn-page', selected === 1 ? active : inactive)}
+                        >
                             1
-                        </Link>
+                        </button>
 
-                        <Link className={cx('btn-page')} to="/">
+                        <button onClick={handleClick(2)} className={cx('btn-page', selected === 2 ? active : inactive)}>
                             2
-                        </Link>
+                        </button>
 
-                        <Link className={cx('btn-page')} to="/">
+                        <button onClick={handleClick(3)} className={cx('btn-page', selected === 3 ? active : inactive)}>
                             3
-                        </Link>
+                        </button>
 
-                        <Link className={cx('btn-page')} to="/">
+                        <button onClick={handleClick(4)} className={cx('btn-page', selected === 4 ? active : inactive)}>
                             4
-                        </Link>
+                        </button>
 
-                        <Link className={cx('btn-page')} to="/">
+                        <button onClick={handleClick(5)} className={cx('btn-page', selected === 5 ? active : inactive)}>
                             5
-                        </Link>
+                        </button>
 
-                        <Link className={cx('btn-page')} to="/">
+                        <button onClick={handleClick(6)} className={cx('btn-page', selected === 6 ? active : inactive)}>
                             6
-                        </Link>
+                        </button>
 
-                        <Link className={cx('btn-page')} to="/">
+                        <button onClick={handleClick(7)} className={cx('btn-page', selected === 7 ? active : inactive)}>
                             7
-                        </Link>
+                        </button>
 
-                        <Link className={cx('btn-page')} to="/">
-                            next
-                        </Link>
+                        <button className={cx('btn-page')}>next</button>
                     </div>
                 </div>
             </div>

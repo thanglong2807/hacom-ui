@@ -39,109 +39,93 @@ function TopHeader() {
                             render={(attrs) => (
                                 <Menu className={cx('header-menu2')} tabIndex="-1" {...attrs}>
                                     <div className={cx('menu2-items-top')}>
-                                        <div className={cx('header-menu2-items')}>
-                                            <Tippy
-                                                interactive={true}
-                                                offset={[400, 123]}
-                                                placement="bottom"
-                                                render={(attrs) => (
-                                                    <Menu className={cx('header-menu2')} tabIndex="-1" {...attrs}>
-                                                        <div className={cx('menu2-bottom-items')}>
-                                                            <div className={cx('menu2-bottom')}>
-                                                                <h4>Tư vấn sản phẩm</h4>
-                                                                <p>
-                                                                    <span>0981145239</span> Mr Duy (Tản nhiệt, Cooling)
-                                                                </p>
-                                                                <p>
-                                                                    <span>0962660318</span> Mr Cường (Workstation,
-                                                                    Server)
-                                                                </p>
-                                                                <p>
-                                                                    <span>0983844490</span> Mr Hòa (Laptop Gaming)
-                                                                </p>
-                                                                <p>
-                                                                    <span>0981089066</span> Mr Linh (Gaming Gear,
-                                                                    Console)
-                                                                </p>
-                                                                <p>
-                                                                    <span>0862096929</span> Mr Nghĩa (Thiết bị văn
-                                                                    phòng)
-                                                                </p>
-                                                                <p>
-                                                                    <span>0984710688</span> Ms Nhật (Thiết bị siêu thị)
-                                                                </p>
-                                                            </div>
-                                                            <div className={cx('menu2-bottom')}>
-                                                                <h4>Tư vấn sản phẩm</h4>
-                                                                <p>
-                                                                    <span>0981145239</span> Mr Duy (Tản nhiệt, Cooling)
-                                                                </p>
-                                                                <p>
-                                                                    <span>0962660318</span> Mr Cường (Workstation,
-                                                                    Server)
-                                                                </p>
-                                                                <p>
-                                                                    <span>0983844490</span> Mr Hòa (Laptop Gaming)
-                                                                </p>
-                                                                <p>
-                                                                    <span>0981089066</span> Mr Linh (Gaming Gear,
-                                                                    Console)
-                                                                </p>
-                                                                <p>
-                                                                    <span>0862096929</span> Mr Nghĩa (Thiết bị văn
-                                                                    phòng)
-                                                                </p>
-                                                                <p>
-                                                                    <span>0984710688</span> Ms Nhật (Thiết bị siêu thị)
-                                                                </p>
-                                                            </div>
-
-                                                            <div className={cx('menu2-bottom')}>
-                                                                <h4>Tư vấn sản phẩm</h4>
-                                                                <p>
-                                                                    <span>0981145239</span> Mr Duy (Tản nhiệt, Cooling)
-                                                                </p>
-                                                                <p>
-                                                                    <span>0962660318</span> Mr Cường (Workstation,
-                                                                    Server)
-                                                                </p>
-                                                                <p>
-                                                                    <span>0983844490</span> Mr Hòa (Laptop Gaming)
-                                                                </p>
-                                                                <p>
-                                                                    <span>0981089066</span> Mr Linh (Gaming Gear,
-                                                                    Console)
-                                                                </p>
-                                                                <p>
-                                                                    <span>0862096929</span> Mr Nghĩa (Thiết bị văn
-                                                                    phòng)
-                                                                </p>
-                                                                <p>
-                                                                    <span>0984710688</span> Ms Nhật (Thiết bị siêu thị)
-                                                                </p>
-                                                            </div>
+                                        <Tippy
+                                            interactive={true}
+                                            offset={[400, 123]}
+                                            placement="bottom"
+                                            render={(attrs) => (
+                                                <Menu className={cx('header-menu2')} tabIndex="-1" {...attrs}>
+                                                    <div className={cx('menu2-bottom-items')}>
+                                                        <div className={cx('menu2-bottom')}>
+                                                            <h4>Tư vấn sản phẩm</h4>
+                                                            <p>
+                                                                <span>0981145239</span> Mr Duy (Tản nhiệt, Cooling)
+                                                            </p>
+                                                            <p>
+                                                                <span>0962660318</span> Mr Cường (Workstation, Server)
+                                                            </p>
+                                                            <p>
+                                                                <span>0983844490</span> Mr Hòa (Laptop Gaming)
+                                                            </p>
+                                                            <p>
+                                                                <span>0981089066</span> Mr Linh (Gaming Gear, Console)
+                                                            </p>
+                                                            <p>
+                                                                <span>0862096929</span> Mr Nghĩa (Thiết bị văn phòng)
+                                                            </p>
+                                                            <p>
+                                                                <span>0984710688</span> Ms Nhật (Thiết bị siêu thị)
+                                                            </p>
                                                         </div>
-                                                    </Menu>
-                                                )}
-                                            >
-                                                <span>Hỗ trợ Hà Nội/Toàn quốc</span>
-                                            </Tippy>
-                                        </div>
-                                        <div className={cx('header-menu2-items')}>
-                                            <span>Hỗ trợ tại Hải Phòng</span>
-                                        </div>
-                                        <div className={cx('header-menu2-items')}>
-                                            <span>Hỗ trợ tại Băc Ninh</span>
-                                        </div>
-                                        <div className={cx('header-menu2-items')}>
-                                            <span>Hỗ trợ tại Bắc Giang</span>
-                                        </div>
-                                        <div className={cx('header-menu2-items')}>
-                                            <span>Hỗ trợ tại phủ lý</span>
-                                        </div>
-                                        <div className={cx('header-menu2-items')}>
-                                            <span>Hỗ trợ tại Thái Nguyên</span>
-                                        </div>
+                                                        <div className={cx('menu2-bottom')}>
+                                                            <h4>Tư vấn sản phẩm</h4>
+                                                            <p>
+                                                                <span>0981145239</span> Mr Duy (Tản nhiệt, Cooling)
+                                                            </p>
+                                                            <p>
+                                                                <span>0962660318</span> Mr Cường (Workstation, Server)
+                                                            </p>
+                                                            <p>
+                                                                <span>0983844490</span> Mr Hòa (Laptop Gaming)
+                                                            </p>
+                                                            <p>
+                                                                <span>0981089066</span> Mr Linh (Gaming Gear, Console)
+                                                            </p>
+                                                            <p>
+                                                                <span>0862096929</span> Mr Nghĩa (Thiết bị văn phòng)
+                                                            </p>
+                                                            <p>
+                                                                <span>0984710688</span> Ms Nhật (Thiết bị siêu thị)
+                                                            </p>
+                                                        </div>
+
+                                                        <div className={cx('menu2-bottom')}>
+                                                            <h4>Tư vấn sản phẩm</h4>
+                                                            <p>
+                                                                <span>0981145239</span> Mr Duy (Tản nhiệt, Cooling)
+                                                            </p>
+                                                            <p>
+                                                                <span>0962660318</span> Mr Cường (Workstation, Server)
+                                                            </p>
+                                                            <p>
+                                                                <span>0983844490</span> Mr Hòa (Laptop Gaming)
+                                                            </p>
+                                                            <p>
+                                                                <span>0981089066</span> Mr Linh (Gaming Gear, Console)
+                                                            </p>
+                                                            <p>
+                                                                <span>0862096929</span> Mr Nghĩa (Thiết bị văn phòng)
+                                                            </p>
+                                                            <p>
+                                                                <span>0984710688</span> Ms Nhật (Thiết bị siêu thị)
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </Menu>
+                                            )}
+                                        >
+                                            <span className={cx('header-menu2-items')}>Hỗ trợ Hà Nội/Toàn quốc</span>
+                                        </Tippy>
+
+                                        <span className={cx('header-menu2-items')}>Hỗ trợ tại Hải Phòng</span>
+
+                                        <span className={cx('header-menu2-items')}>Hỗ trợ tại Băc Ninh</span>
+
+                                        <span className={cx('header-menu2-items')}>Hỗ trợ tại Bắc Giang</span>
+
+                                        <span className={cx('header-menu2-items')}>Hỗ trợ tại phủ lý</span>
+
+                                        <span className={cx('header-menu2-items')}>Hỗ trợ tại Thái Nguyên</span>
                                     </div>
                                     <p className={cx('menu2-items-p')}>Bán hàng ONLINE ( 8h - 24h hằng ngày )</p>
                                 </Menu>

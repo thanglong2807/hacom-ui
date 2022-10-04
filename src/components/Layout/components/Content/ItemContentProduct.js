@@ -1,40 +1,30 @@
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
-
-import styles from './ItemProduct.module.scss';
-
+import styles from './Content.module.scss';
 const cx = classNames.bind(styles);
-function ItemProduct({ data }) {
+
+function ItemContentProduct({ data }) {
     return (
-        <div className={cx('product__container-item')}>
-            <Link to={`/ProductDetails/${data.loaispId}/${data.id}`}>
-                <img src={data.anhsp[0]} className={cx('items-img')} alt={data.avatar} />
-            </Link>
+        <div className={cx('items-container')}>
+            <div className={cx('items-img')}>
+                <Link to={`/ProductDetails/${data.loaispId}/${data.id}`} className={cx('items-img-a')}>
+                    <img className={cx('items-img-children')} src={data.anhsp[0]} alt={data.anhsp[0]} />
+                </Link>
+            </div>
             <div className={cx('items-evaluate')}>
                 <Link to={`/ProductDetails/${data.loaispId}/${data.id}`} className={cx('items-evaluate-a')}>
                     <img src="https://hacom.vn/media/lib/star_0.png" alt="rate" className={cx('items-evaluate-img')} />
                     <span className={cx('items-evaluate-cound')}>(0)</span>
                 </Link>
-                <p>Mã: PCGM522</p>
+                <p>Mã: PCGM{data.id}</p>
             </div>
             <div className={cx('items-info')}>
                 <h3 className={cx('items-info-name')}>
-                    <Link style={{ 'text-align': 'initial' }} to={`/ProductDetails/${data.loaispId}/${data.id}`}>
-                        {data.tensp}
-                    </Link>
+                    <Link to={`/ProductDetails/${data.loaispId}/${data.id}`}>{data.tensp}</Link>
                 </h3>
-                {!data.mota ? (
-                    <ul>
-                        <li>CPU Intel® Core™ i5-12500H Processor (18MB cache, up to 4.5GHz)</li>
-                        <li>RAM 8GB DDR4 Onboard ( còn 1 khe ram trống)</li>
-                    </ul>
-                ) : (
-                    <ul>
-                        <li>{data.mota}</li>
-                    </ul>
-                )}
+
                 <div>
-                    <span className={cx('items-info-mprice')}> {data.oldprice}₫ </span>
+                    <span className={cx('items-info-mprice')}> {data.oldprice}đ </span>
                     <span className={cx('items-info-discount')}>
                         <span className={cx('noMinPrice')}>(Tiết kiệm: 19% )</span>
                     </span>
@@ -50,4 +40,4 @@ function ItemProduct({ data }) {
     );
 }
 
-export default ItemProduct;
+export default ItemContentProduct;

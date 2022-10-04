@@ -97,9 +97,11 @@
         padding: 3px 7px;
         margin-right: 3px;
         font-size: 12px;
-        &:hover {
-            background: #243a76;
-            color: #fff;
-        }
     }
+}
+
+.active,
+.btn-page:hover {
+    background: #243a76;
+    color: #fff !important;
 }

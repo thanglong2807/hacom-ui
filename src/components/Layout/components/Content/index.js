@@ -4,838 +4,94 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import { Autoplay, Pagination, Navigation } from 'swiper';
+// import 'swiper/css/navigation';
+import { Autoplay, Pagination } from 'swiper';
 import classNames from 'classnames/bind';
 import styles from './Content.module.scss';
+
+import ProductContent from './ProductContent';
 const cx = classNames.bind(styles);
 function Content() {
+    const danhmuc = [
+        {
+            title: 'LAPTOP, TABLET, MOBILE',
+            id: 1,
+            describe: ['Laptop, Máy Tính Xách Tay', ' Điện Thoại, Máy Tính Bảng'],
+        },
+        {
+            title: 'PC VĂN PHÒNG, AIO, MINI PC',
+            id: 2,
+            describe: [
+                'Máy Tính Văn Phòng HACOM',
+                ' Máy Tính Để Bàn Dell',
+                ' Máy Tính Để Bàn HP',
+                ' Máy Tính Để Bàn Asus',
+                '  Máy Tính Để Bàn Lenovo',
+                '  Máy Tính Để Bàn Acer',
+            ],
+        },
+
+        {
+            title: 'PC GAMING, STREAMING',
+            id: 3,
+            describe: [
+                'Máy Tính Chơi Game HACOM',
+                ' Máy Tính Live Stream, PC Streamer, Youtuber',
+                'Máy Tính Chơi Game Asus',
+                ' Máy Tính Chơi Game Lenovo',
+                ' Máy Tính Chơi Game MSI',
+                'GIGABYTE',
+            ],
+        },
+        {
+            title: 'PC ĐỒ HỌA, RENDER, MÁY CHỦ',
+            id: 4,
+            describe: [
+                'PC Đồ Họa',
+                'Render HACOM',
+                ' Máy Chủ HACOM',
+                ' Máy Trạm Hãng',
+                ' Máy Chủ Hãng',
+                '  Linh Kiện Máy Chủ, Máy Trạm',
+            ],
+        },
+    ];
+
     return (
         <div className={cx('wrapper')}>
-            <div className={cx('items')}>
-                <div className={cx('items-title')}>
-                    <p>CẤU HÌNH PC KHỦNG VẬT VÃ </p>
-                    <p>GAME THỦ CHƠI GAME THẬT ĐÃ</p>
+            {danhmuc.map((result) => (
+                <div className={cx('items')}>
+                    <div className={cx('items-title')}>
+                        <p>CẤU HÌNH PC KHỦNG VẬT VÃ </p>
+                        <p>GAME THỦ CHƠI GAME THẬT ĐÃ</p>
+                    </div>
+                    <Swiper
+                        loop={true}
+                        slidesPerView={1}
+                        spaceBetween={30}
+                        centeredSlides={true}
+                        autoplay={{
+                            delay: 20000,
+                            disableOnInteraction: false,
+                        }}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        // navigation={true}
+                        modules={[Autoplay, Pagination]}
+                        className="mySwiper"
+                    >
+                        <>
+                            <SwiperSlide>
+                                <ProductContent key={result.id} data={result.id} />
+                            </SwiperSlide>
+                        </>
+                    </Swiper>
+                    <a href="/" className={cx('items-view')}>
+                        Xem tất cả sản phẩm
+                    </a>
                 </div>
-                <Swiper
-                    loop={true}
-                    slidesPerView={1}
-                    spaceBetween={30}
-                    centeredSlides={true}
-                    autoplay={{
-                        delay: 10000,
-                        disableOnInteraction: false,
-                    }}
-                    pagination={{
-                        clickable: true,
-                    }}
-                    // navigation={true}
-                    modules={[Autoplay, Pagination, Navigation]}
-                    className="mySwiper"
-                >
-                    <SwiperSlide>
-                        <div className={cx('items-container')}>
-                            <div className={cx('items-img')}>
-                                <a className={cx('items-img-a')} href="/">
-                                    <img
-                                        className={cx('items-img-children')}
-                                        src="https://hanoicomputercdn.com/media/product/250_62693_nitrophim.png"
-                                        alt="PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)"
-                                    />
-                                </a>
-                            </div>
-                            <div className={cx('items-evaluate')}>
-                                <a
-                                    className={cx('items-evaluate-a')}
-                                    href="/pc-hacom-shark-s02-i5-12400f-b660-8gb-ram-500gb-ssd-gtx-1660s-550w#tab5"
-                                >
-                                    <img
-                                        src="https://hacom.vn/media/lib/star_0.png"
-                                        alt="rate"
-                                        className={cx('items-evaluate-img')}
-                                    />
-                                    <span className={cx('items-evaluate-cound')}>(0)</span>
-                                </a>
-                                <p>Mã: PCGM522</p>
-                            </div>
-                            <div className={cx('items-info')}>
-                                <h3 className={cx('items-info-name')}>
-                                    <a href="/">PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)</a>
-                                </h3>
-
-                                <div>
-                                    <span className={cx('items-info-mprice')}> 19.999.000₫ </span>
-                                    <span className={cx('items-info-discount')}>
-                                        <span className={cx('noMinPrice')}>(Tiết kiệm: 19% )</span>
-                                    </span>
-                                </div>
-                                <span className={cx('items-info-price')}> 16.899.000₫</span>
-                            </div>
-                            <div className={cx('items-action')}>
-                                <span className={cx('items-qty')}>
-                                    <i className="fa fa-check" aria-hidden="true"></i> Còn hàng
-                                </span>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className={cx('items-container')}>
-                            <div className={cx('items-img')}>
-                                <a className={cx('items-img-a')} href="/">
-                                    <img
-                                        className={cx('items-img-children')}
-                                        src="https://hanoicomputercdn.com/media/product/250_62693_nitrophim.png"
-                                        alt="PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)"
-                                    />
-                                </a>
-                            </div>
-                            <div className={cx('items-evaluate')}>
-                                <a
-                                    className={cx('items-evaluate-a')}
-                                    href="/pc-hacom-shark-s02-i5-12400f-b660-8gb-ram-500gb-ssd-gtx-1660s-550w#tab5"
-                                >
-                                    <img
-                                        src="https://hacom.vn/media/lib/star_0.png"
-                                        alt="rate"
-                                        className={cx('items-evaluate-img')}
-                                    />
-                                    <span className={cx('items-evaluate-cound')}>(0)</span>
-                                </a>
-                                <p>Mã: PCGM522</p>
-                            </div>
-                            <div className={cx('items-info')}>
-                                <h3 className={cx('items-info-name')}>
-                                    <a href="/">PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)</a>
-                                </h3>
-
-                                <div>
-                                    <span className={cx('items-info-mprice')}> 19.999.000₫ </span>
-                                    <span className={cx('items-info-discount')}>
-                                        <span className={cx('noMinPrice')}>(Tiết kiệm: 19% )</span>
-                                    </span>
-                                </div>
-                                <span className={cx('items-info-price')}> 16.899.000₫</span>
-                            </div>
-                            <div className={cx('items-action')}>
-                                <span className={cx('items-qty')}>
-                                    <i className="fa fa-check" aria-hidden="true"></i> Còn hàng
-                                </span>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className={cx('items-container')}>
-                            <div className={cx('items-img')}>
-                                <a className={cx('items-img-a')} href="/">
-                                    <img
-                                        className={cx('items-img-children')}
-                                        src="https://hanoicomputercdn.com/media/product/250_62693_nitrophim.png"
-                                        alt="PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)"
-                                    />
-                                </a>
-                            </div>
-                            <div className={cx('items-evaluate')}>
-                                <a
-                                    className={cx('items-evaluate-a')}
-                                    href="/pc-hacom-shark-s02-i5-12400f-b660-8gb-ram-500gb-ssd-gtx-1660s-550w#tab5"
-                                >
-                                    <img
-                                        src="https://hacom.vn/media/lib/star_0.png"
-                                        alt="rate"
-                                        className={cx('items-evaluate-img')}
-                                    />
-                                    <span className={cx('items-evaluate-cound')}>(0)</span>
-                                </a>
-                                <p>Mã: PCGM522</p>
-                            </div>
-                            <div className={cx('items-info')}>
-                                <h3 className={cx('items-info-name')}>
-                                    <a href="/">PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)</a>
-                                </h3>
-
-                                <div>
-                                    <span className={cx('items-info-mprice')}> 19.999.000₫ </span>
-                                    <span className={cx('items-info-discount')}>
-                                        <span className={cx('noMinPrice')}>(Tiết kiệm: 19% )</span>
-                                    </span>
-                                </div>
-                                <span className={cx('items-info-price')}> 16.899.000₫</span>
-                            </div>
-                            <div className={cx('items-action')}>
-                                <span className={cx('items-qty')}>
-                                    <i className="fa fa-check" aria-hidden="true"></i> Còn hàng
-                                </span>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className={cx('items-container')}>
-                            <div className={cx('items-img')}>
-                                <a className={cx('items-img-a')} href="/">
-                                    <img
-                                        className={cx('items-img-children')}
-                                        src="https://hanoicomputercdn.com/media/product/250_62693_nitrophim.png"
-                                        alt="PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)"
-                                    />
-                                </a>
-                            </div>
-                            <div className={cx('items-evaluate')}>
-                                <a
-                                    className={cx('items-evaluate-a')}
-                                    href="/pc-hacom-shark-s02-i5-12400f-b660-8gb-ram-500gb-ssd-gtx-1660s-550w#tab5"
-                                >
-                                    <img
-                                        src="https://hacom.vn/media/lib/star_0.png"
-                                        alt="rate"
-                                        className={cx('items-evaluate-img')}
-                                    />
-                                    <span className={cx('items-evaluate-cound')}>(0)</span>
-                                </a>
-                                <p>Mã: PCGM522</p>
-                            </div>
-                            <div className={cx('items-info')}>
-                                <h3 className={cx('items-info-name')}>
-                                    <a href="/">PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)</a>
-                                </h3>
-
-                                <div>
-                                    <span className={cx('items-info-mprice')}> 19.999.000₫ </span>
-                                    <span className={cx('items-info-discount')}>
-                                        <span className={cx('noMinPrice')}>(Tiết kiệm: 19% )</span>
-                                    </span>
-                                </div>
-                                <span className={cx('items-info-price')}> 16.899.000₫</span>
-                            </div>
-                            <div className={cx('items-action')}>
-                                <span className={cx('items-qty')}>
-                                    <i className="fa fa-check" aria-hidden="true"></i> Còn hàng
-                                </span>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                </Swiper>
-                <a href="/" className={cx('items-view')}>
-                    Xem tất cả sản phẩm
-                </a>
-            </div>
-            <div className={cx('items')}>
-                <div className={cx('items-title')}>
-                    <p>CẤU HÌNH PC KHỦNG VẬT VÃ </p>
-                    <p>GAME THỦ CHƠI GAME THẬT ĐÃ</p>
-                </div>
-                <Swiper
-                    loop={true}
-                    slidesPerView={1}
-                    spaceBetween={30}
-                    centeredSlides={true}
-                    autoplay={{
-                        delay: 10000,
-                        disableOnInteraction: false,
-                    }}
-                    pagination={{
-                        clickable: true,
-                    }}
-                    // navigation={true}
-                    modules={[Autoplay, Pagination, Navigation]}
-                    className="mySwiper"
-                >
-                    <SwiperSlide>
-                        <div className={cx('items-container')}>
-                            <div className={cx('items-img')}>
-                                <a className={cx('items-img-a')} href="/">
-                                    <img
-                                        className={cx('items-img-children')}
-                                        src="https://hanoicomputercdn.com/media/product/250_62693_nitrophim.png"
-                                        alt="PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)"
-                                    />
-                                </a>
-                            </div>
-                            <div className={cx('items-evaluate')}>
-                                <a
-                                    className={cx('items-evaluate-a')}
-                                    href="/pc-hacom-shark-s02-i5-12400f-b660-8gb-ram-500gb-ssd-gtx-1660s-550w#tab5"
-                                >
-                                    <img
-                                        src="https://hacom.vn/media/lib/star_0.png"
-                                        alt="rate"
-                                        className={cx('items-evaluate-img')}
-                                    />
-                                    <span className={cx('items-evaluate-cound')}>(0)</span>
-                                </a>
-                                <p>Mã: PCGM522</p>
-                            </div>
-                            <div className={cx('items-info')}>
-                                <h3 className={cx('items-info-name')}>
-                                    <a href="/">PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)</a>
-                                </h3>
-
-                                <div>
-                                    <span className={cx('items-info-mprice')}> 19.999.000₫ </span>
-                                    <span className={cx('items-info-discount')}>
-                                        <span className={cx('noMinPrice')}>(Tiết kiệm: 19% )</span>
-                                    </span>
-                                </div>
-                                <span className={cx('items-info-price')}> 16.899.000₫</span>
-                            </div>
-                            <div className={cx('items-action')}>
-                                <span className={cx('items-qty')}>
-                                    <i className="fa fa-check" aria-hidden="true"></i> Còn hàng
-                                </span>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className={cx('items-container')}>
-                            <div className={cx('items-img')}>
-                                <a className={cx('items-img-a')} href="/">
-                                    <img
-                                        className={cx('items-img-children')}
-                                        src="https://hanoicomputercdn.com/media/product/250_62693_nitrophim.png"
-                                        alt="PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)"
-                                    />
-                                </a>
-                            </div>
-                            <div className={cx('items-evaluate')}>
-                                <a
-                                    className={cx('items-evaluate-a')}
-                                    href="/pc-hacom-shark-s02-i5-12400f-b660-8gb-ram-500gb-ssd-gtx-1660s-550w#tab5"
-                                >
-                                    <img
-                                        src="https://hacom.vn/media/lib/star_0.png"
-                                        alt="rate"
-                                        className={cx('items-evaluate-img')}
-                                    />
-                                    <span className={cx('items-evaluate-cound')}>(0)</span>
-                                </a>
-                                <p>Mã: PCGM522</p>
-                            </div>
-                            <div className={cx('items-info')}>
-                                <h3 className={cx('items-info-name')}>
-                                    <a href="/">PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)</a>
-                                </h3>
-
-                                <div>
-                                    <span className={cx('items-info-mprice')}> 19.999.000₫ </span>
-                                    <span className={cx('items-info-discount')}>
-                                        <span className={cx('noMinPrice')}>(Tiết kiệm: 19% )</span>
-                                    </span>
-                                </div>
-                                <span className={cx('items-info-price')}> 16.899.000₫</span>
-                            </div>
-                            <div className={cx('items-action')}>
-                                <span className={cx('items-qty')}>
-                                    <i className="fa fa-check" aria-hidden="true"></i> Còn hàng
-                                </span>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className={cx('items-container')}>
-                            <div className={cx('items-img')}>
-                                <a className={cx('items-img-a')} href="/">
-                                    <img
-                                        className={cx('items-img-children')}
-                                        src="https://hanoicomputercdn.com/media/product/250_62693_nitrophim.png"
-                                        alt="PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)"
-                                    />
-                                </a>
-                            </div>
-                            <div className={cx('items-evaluate')}>
-                                <a
-                                    className={cx('items-evaluate-a')}
-                                    href="/pc-hacom-shark-s02-i5-12400f-b660-8gb-ram-500gb-ssd-gtx-1660s-550w#tab5"
-                                >
-                                    <img
-                                        src="https://hacom.vn/media/lib/star_0.png"
-                                        alt="rate"
-                                        className={cx('items-evaluate-img')}
-                                    />
-                                    <span className={cx('items-evaluate-cound')}>(0)</span>
-                                </a>
-                                <p>Mã: PCGM522</p>
-                            </div>
-                            <div className={cx('items-info')}>
-                                <h3 className={cx('items-info-name')}>
-                                    <a href="/">PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)</a>
-                                </h3>
-
-                                <div>
-                                    <span className={cx('items-info-mprice')}> 19.999.000₫ </span>
-                                    <span className={cx('items-info-discount')}>
-                                        <span className={cx('noMinPrice')}>(Tiết kiệm: 19% )</span>
-                                    </span>
-                                </div>
-                                <span className={cx('items-info-price')}> 16.899.000₫</span>
-                            </div>
-                            <div className={cx('items-action')}>
-                                <span className={cx('items-qty')}>
-                                    <i className="fa fa-check" aria-hidden="true"></i> Còn hàng
-                                </span>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className={cx('items-container')}>
-                            <div className={cx('items-img')}>
-                                <a className={cx('items-img-a')} href="/">
-                                    <img
-                                        className={cx('items-img-children')}
-                                        src="https://hanoicomputercdn.com/media/product/250_62693_nitrophim.png"
-                                        alt="PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)"
-                                    />
-                                </a>
-                            </div>
-                            <div className={cx('items-evaluate')}>
-                                <a
-                                    className={cx('items-evaluate-a')}
-                                    href="/pc-hacom-shark-s02-i5-12400f-b660-8gb-ram-500gb-ssd-gtx-1660s-550w#tab5"
-                                >
-                                    <img
-                                        src="https://hacom.vn/media/lib/star_0.png"
-                                        alt="rate"
-                                        className={cx('items-evaluate-img')}
-                                    />
-                                    <span className={cx('items-evaluate-cound')}>(0)</span>
-                                </a>
-                                <p>Mã: PCGM522</p>
-                            </div>
-                            <div className={cx('items-info')}>
-                                <h3 className={cx('items-info-name')}>
-                                    <a href="/">PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)</a>
-                                </h3>
-
-                                <div>
-                                    <span className={cx('items-info-mprice')}> 19.999.000₫ </span>
-                                    <span className={cx('items-info-discount')}>
-                                        <span className={cx('noMinPrice')}>(Tiết kiệm: 19% )</span>
-                                    </span>
-                                </div>
-                                <span className={cx('items-info-price')}> 16.899.000₫</span>
-                            </div>
-                            <div className={cx('items-action')}>
-                                <span className={cx('items-qty')}>
-                                    <i className="fa fa-check" aria-hidden="true"></i> Còn hàng
-                                </span>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                </Swiper>
-                <a href="/" className={cx('items-view')}>
-                    Xem tất cả sản phẩm
-                </a>
-            </div>
-            <div className={cx('items')}>
-                <div className={cx('items-title')}>
-                    <p>CẤU HÌNH PC KHỦNG VẬT VÃ </p>
-                    <p>GAME THỦ CHƠI GAME THẬT ĐÃ</p>
-                </div>
-                <Swiper
-                    loop={true}
-                    slidesPerView={1}
-                    spaceBetween={30}
-                    centeredSlides={true}
-                    autoplay={{
-                        delay: 10000,
-                        disableOnInteraction: false,
-                    }}
-                    pagination={{
-                        clickable: true,
-                    }}
-                    // navigation={true}
-                    modules={[Autoplay, Pagination, Navigation]}
-                    className="mySwiper"
-                >
-                    <SwiperSlide>
-                        <div className={cx('items-container')}>
-                            <div className={cx('items-img')}>
-                                <a className={cx('items-img-a')} href="/">
-                                    <img
-                                        className={cx('items-img-children')}
-                                        src="https://hanoicomputercdn.com/media/product/250_62693_nitrophim.png"
-                                        alt="PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)"
-                                    />
-                                </a>
-                            </div>
-                            <div className={cx('items-evaluate')}>
-                                <a
-                                    className={cx('items-evaluate-a')}
-                                    href="/pc-hacom-shark-s02-i5-12400f-b660-8gb-ram-500gb-ssd-gtx-1660s-550w#tab5"
-                                >
-                                    <img
-                                        src="https://hacom.vn/media/lib/star_0.png"
-                                        alt="rate"
-                                        className={cx('items-evaluate-img')}
-                                    />
-                                    <span className={cx('items-evaluate-cound')}>(0)</span>
-                                </a>
-                                <p>Mã: PCGM522</p>
-                            </div>
-                            <div className={cx('items-info')}>
-                                <h3 className={cx('items-info-name')}>
-                                    <a href="/">PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)</a>
-                                </h3>
-
-                                <div>
-                                    <span className={cx('items-info-mprice')}> 19.999.000₫ </span>
-                                    <span className={cx('items-info-discount')}>
-                                        <span className={cx('noMinPrice')}>(Tiết kiệm: 19% )</span>
-                                    </span>
-                                </div>
-                                <span className={cx('items-info-price')}> 16.899.000₫</span>
-                            </div>
-                            <div className={cx('items-action')}>
-                                <span className={cx('items-qty')}>
-                                    <i className="fa fa-check" aria-hidden="true"></i> Còn hàng
-                                </span>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className={cx('items-container')}>
-                            <div className={cx('items-img')}>
-                                <a className={cx('items-img-a')} href="/">
-                                    <img
-                                        className={cx('items-img-children')}
-                                        src="https://hanoicomputercdn.com/media/product/250_62693_nitrophim.png"
-                                        alt="PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)"
-                                    />
-                                </a>
-                            </div>
-                            <div className={cx('items-evaluate')}>
-                                <a
-                                    className={cx('items-evaluate-a')}
-                                    href="/pc-hacom-shark-s02-i5-12400f-b660-8gb-ram-500gb-ssd-gtx-1660s-550w#tab5"
-                                >
-                                    <img
-                                        src="https://hacom.vn/media/lib/star_0.png"
-                                        alt="rate"
-                                        className={cx('items-evaluate-img')}
-                                    />
-                                    <span className={cx('items-evaluate-cound')}>(0)</span>
-                                </a>
-                                <p>Mã: PCGM522</p>
-                            </div>
-                            <div className={cx('items-info')}>
-                                <h3 className={cx('items-info-name')}>
-                                    <a href="/">PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)</a>
-                                </h3>
-
-                                <div>
-                                    <span className={cx('items-info-mprice')}> 19.999.000₫ </span>
-                                    <span className={cx('items-info-discount')}>
-                                        <span className={cx('noMinPrice')}>(Tiết kiệm: 19% )</span>
-                                    </span>
-                                </div>
-                                <span className={cx('items-info-price')}> 16.899.000₫</span>
-                            </div>
-                            <div className={cx('items-action')}>
-                                <span className={cx('items-qty')}>
-                                    <i className="fa fa-check" aria-hidden="true"></i> Còn hàng
-                                </span>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className={cx('items-container')}>
-                            <div className={cx('items-img')}>
-                                <a className={cx('items-img-a')} href="/">
-                                    <img
-                                        className={cx('items-img-children')}
-                                        src="https://hanoicomputercdn.com/media/product/250_62693_nitrophim.png"
-                                        alt="PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)"
-                                    />
-                                </a>
-                            </div>
-                            <div className={cx('items-evaluate')}>
-                                <a
-                                    className={cx('items-evaluate-a')}
-                                    href="/pc-hacom-shark-s02-i5-12400f-b660-8gb-ram-500gb-ssd-gtx-1660s-550w#tab5"
-                                >
-                                    <img
-                                        src="https://hacom.vn/media/lib/star_0.png"
-                                        alt="rate"
-                                        className={cx('items-evaluate-img')}
-                                    />
-                                    <span className={cx('items-evaluate-cound')}>(0)</span>
-                                </a>
-                                <p>Mã: PCGM522</p>
-                            </div>
-                            <div className={cx('items-info')}>
-                                <h3 className={cx('items-info-name')}>
-                                    <a href="/">PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)</a>
-                                </h3>
-
-                                <div>
-                                    <span className={cx('items-info-mprice')}> 19.999.000₫ </span>
-                                    <span className={cx('items-info-discount')}>
-                                        <span className={cx('noMinPrice')}>(Tiết kiệm: 19% )</span>
-                                    </span>
-                                </div>
-                                <span className={cx('items-info-price')}> 16.899.000₫</span>
-                            </div>
-                            <div className={cx('items-action')}>
-                                <span className={cx('items-qty')}>
-                                    <i className="fa fa-check" aria-hidden="true"></i> Còn hàng
-                                </span>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className={cx('items-container')}>
-                            <div className={cx('items-img')}>
-                                <a className={cx('items-img-a')} href="/">
-                                    <img
-                                        className={cx('items-img-children')}
-                                        src="https://hanoicomputercdn.com/media/product/250_62693_nitrophim.png"
-                                        alt="PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)"
-                                    />
-                                </a>
-                            </div>
-                            <div className={cx('items-evaluate')}>
-                                <a
-                                    className={cx('items-evaluate-a')}
-                                    href="/pc-hacom-shark-s02-i5-12400f-b660-8gb-ram-500gb-ssd-gtx-1660s-550w#tab5"
-                                >
-                                    <img
-                                        src="https://hacom.vn/media/lib/star_0.png"
-                                        alt="rate"
-                                        className={cx('items-evaluate-img')}
-                                    />
-                                    <span className={cx('items-evaluate-cound')}>(0)</span>
-                                </a>
-                                <p>Mã: PCGM522</p>
-                            </div>
-                            <div className={cx('items-info')}>
-                                <h3 className={cx('items-info-name')}>
-                                    <a href="/">PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)</a>
-                                </h3>
-
-                                <div>
-                                    <span className={cx('items-info-mprice')}> 19.999.000₫ </span>
-                                    <span className={cx('items-info-discount')}>
-                                        <span className={cx('noMinPrice')}>(Tiết kiệm: 19% )</span>
-                                    </span>
-                                </div>
-                                <span className={cx('items-info-price')}> 16.899.000₫</span>
-                            </div>
-                            <div className={cx('items-action')}>
-                                <span className={cx('items-qty')}>
-                                    <i className="fa fa-check" aria-hidden="true"></i> Còn hàng
-                                </span>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                </Swiper>
-                <a href="/" className={cx('items-view')}>
-                    Xem tất cả sản phẩm
-                </a>
-            </div>
-            <div className={cx('items')}>
-                <div className={cx('items-title')}>
-                    <p>CẤU HÌNH PC KHỦNG VẬT VÃ </p>
-                    <p>GAME THỦ CHƠI GAME THẬT ĐÃ</p>
-                </div>
-                <Swiper
-                    loop={true}
-                    slidesPerView={1}
-                    spaceBetween={30}
-                    centeredSlides={true}
-                    autoplay={{
-                        delay: 10000,
-                        disableOnInteraction: false,
-                    }}
-                    pagination={{
-                        clickable: true,
-                    }}
-                    // navigation={true}
-                    modules={[Autoplay, Pagination, Navigation]}
-                    className="mySwiper"
-                >
-                    <SwiperSlide>
-                        <div className={cx('items-container')}>
-                            <div className={cx('items-img')}>
-                                <a className={cx('items-img-a')} href="/">
-                                    <img
-                                        className={cx('items-img-children')}
-                                        src="https://hanoicomputercdn.com/media/product/250_62693_nitrophim.png"
-                                        alt="PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)"
-                                    />
-                                </a>
-                            </div>
-                            <div className={cx('items-evaluate')}>
-                                <a
-                                    className={cx('items-evaluate-a')}
-                                    href="/pc-hacom-shark-s02-i5-12400f-b660-8gb-ram-500gb-ssd-gtx-1660s-550w#tab5"
-                                >
-                                    <img
-                                        src="https://hacom.vn/media/lib/star_0.png"
-                                        alt="rate"
-                                        className={cx('items-evaluate-img')}
-                                    />
-                                    <span className={cx('items-evaluate-cound')}>(0)</span>
-                                </a>
-                                <p>Mã: PCGM522</p>
-                            </div>
-                            <div className={cx('items-info')}>
-                                <h3 className={cx('items-info-name')}>
-                                    <a href="/">PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)</a>
-                                </h3>
-
-                                <div>
-                                    <span className={cx('items-info-mprice')}> 19.999.000₫ </span>
-                                    <span className={cx('items-info-discount')}>
-                                        <span className={cx('noMinPrice')}>(Tiết kiệm: 19% )</span>
-                                    </span>
-                                </div>
-                                <span className={cx('items-info-price')}> 16.899.000₫</span>
-                            </div>
-                            <div className={cx('items-action')}>
-                                <span className={cx('items-qty')}>
-                                    <i className="fa fa-check" aria-hidden="true"></i> Còn hàng
-                                </span>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className={cx('items-container')}>
-                            <div className={cx('items-img')}>
-                                <a className={cx('items-img-a')} href="/">
-                                    <img
-                                        className={cx('items-img-children')}
-                                        src="https://hanoicomputercdn.com/media/product/250_62693_nitrophim.png"
-                                        alt="PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)"
-                                    />
-                                </a>
-                            </div>
-                            <div className={cx('items-evaluate')}>
-                                <a
-                                    className={cx('items-evaluate-a')}
-                                    href="/pc-hacom-shark-s02-i5-12400f-b660-8gb-ram-500gb-ssd-gtx-1660s-550w#tab5"
-                                >
-                                    <img
-                                        src="https://hacom.vn/media/lib/star_0.png"
-                                        alt="rate"
-                                        className={cx('items-evaluate-img')}
-                                    />
-                                    <span className={cx('items-evaluate-cound')}>(0)</span>
-                                </a>
-                                <p>Mã: PCGM522</p>
-                            </div>
-                            <div className={cx('items-info')}>
-                                <h3 className={cx('items-info-name')}>
-                                    <a href="/">PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)</a>
-                                </h3>
-
-                                <div>
-                                    <span className={cx('items-info-mprice')}> 19.999.000₫ </span>
-                                    <span className={cx('items-info-discount')}>
-                                        <span className={cx('noMinPrice')}>(Tiết kiệm: 19% )</span>
-                                    </span>
-                                </div>
-                                <span className={cx('items-info-price')}> 16.899.000₫</span>
-                            </div>
-                            <div className={cx('items-action')}>
-                                <span className={cx('items-qty')}>
-                                    <i className="fa fa-check" aria-hidden="true"></i> Còn hàng
-                                </span>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className={cx('items-container')}>
-                            <div className={cx('items-img')}>
-                                <a className={cx('items-img-a')} href="/">
-                                    <img
-                                        className={cx('items-img-children')}
-                                        src="https://hanoicomputercdn.com/media/product/250_62693_nitrophim.png"
-                                        alt="PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)"
-                                    />
-                                </a>
-                            </div>
-                            <div className={cx('items-evaluate')}>
-                                <a
-                                    className={cx('items-evaluate-a')}
-                                    href="/pc-hacom-shark-s02-i5-12400f-b660-8gb-ram-500gb-ssd-gtx-1660s-550w#tab5"
-                                >
-                                    <img
-                                        src="https://hacom.vn/media/lib/star_0.png"
-                                        alt="rate"
-                                        className={cx('items-evaluate-img')}
-                                    />
-                                    <span className={cx('items-evaluate-cound')}>(0)</span>
-                                </a>
-                                <p>Mã: PCGM522</p>
-                            </div>
-                            <div className={cx('items-info')}>
-                                <h3 className={cx('items-info-name')}>
-                                    <a href="/">PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)</a>
-                                </h3>
-
-                                <div>
-                                    <span className={cx('items-info-mprice')}> 19.999.000₫ </span>
-                                    <span className={cx('items-info-discount')}>
-                                        <span className={cx('noMinPrice')}>(Tiết kiệm: 19% )</span>
-                                    </span>
-                                </div>
-                                <span className={cx('items-info-price')}> 16.899.000₫</span>
-                            </div>
-                            <div className={cx('items-action')}>
-                                <span className={cx('items-qty')}>
-                                    <i className="fa fa-check" aria-hidden="true"></i> Còn hàng
-                                </span>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <div className={cx('items-container')}>
-                            <div className={cx('items-img')}>
-                                <a className={cx('items-img-a')} href="/">
-                                    <img
-                                        className={cx('items-img-children')}
-                                        src="https://hanoicomputercdn.com/media/product/250_62693_nitrophim.png"
-                                        alt="PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)"
-                                    />
-                                </a>
-                            </div>
-                            <div className={cx('items-evaluate')}>
-                                <a
-                                    className={cx('items-evaluate-a')}
-                                    href="/pc-hacom-shark-s02-i5-12400f-b660-8gb-ram-500gb-ssd-gtx-1660s-550w#tab5"
-                                >
-                                    <img
-                                        src="https://hacom.vn/media/lib/star_0.png"
-                                        alt="rate"
-                                        className={cx('items-evaluate-img')}
-                                    />
-                                    <span className={cx('items-evaluate-cound')}>(0)</span>
-                                </a>
-                                <p>Mã: PCGM522</p>
-                            </div>
-                            <div className={cx('items-info')}>
-                                <h3 className={cx('items-info-name')}>
-                                    <a href="/">PC HACOM SHARK S02 (i5 12400F/B660/8GB RAM/500GB SSD/GTX 1660S/550W)</a>
-                                </h3>
-
-                                <div>
-                                    <span className={cx('items-info-mprice')}> 19.999.000₫ </span>
-                                    <span className={cx('items-info-discount')}>
-                                        <span className={cx('noMinPrice')}>(Tiết kiệm: 19% )</span>
-                                    </span>
-                                </div>
-                                <span className={cx('items-info-price')}> 16.899.000₫</span>
-                            </div>
-                            <div className={cx('items-action')}>
-                                <span className={cx('items-qty')}>
-                                    <i className="fa fa-check" aria-hidden="true"></i> Còn hàng
-                                </span>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                </Swiper>
-                <a href="/" className={cx('items-view')}>
-                    Xem tất cả sản phẩm
-                </a>
-            </div>
+            ))}
         </div>
     );
 }
