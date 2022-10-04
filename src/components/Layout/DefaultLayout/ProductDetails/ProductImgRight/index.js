@@ -1,9 +1,21 @@
-import { faAngleDown, faCartPlus, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faCartPlus, faHeart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './ProductImg.module.scss';
 const cx = classNames.bind(styles);
-function ProductImgRight() {
+function ProductImgRight({ data }) {
+    const [count, setCount] = useState(1);
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        const items = JSON.parse(localStorage.getItem('items'));
+        if (items) {
+            setItems(items);
+        }
+    }, []);
+
     return (
         <div>
             <div className={cx('product_detail-meta')}>
@@ -47,9 +59,6 @@ function ProductImgRight() {
 
                     <li>OS Windows 11 Home SL</li>
                 </ul>
-                <a href="/" className={cx('viewmoretskt')}>
-                    Xem thêm <FontAwesomeIcon icon={faAngleDown} />
-                </a>
             </div>
             <div className={cx('price-2021')}>
                 <p>Giá khuyến mại:</p>
@@ -57,8 +66,8 @@ function ProductImgRight() {
                 <div className={cx('gia-thang-5')}>
                     <p>Giá đặc biệt ưu đãi tháng 9:</p>
 
-                    <strong className={cx('giakm')} data-price="18999000">
-                        18.999.000₫
+                    <strong className={cx('giakm')} data-price={data.oldprice}>
+                        {data.oldprice}
                     </strong>
 
                     <strong className={cx('giany')}> 19.999.000₫ </strong>
@@ -85,27 +94,27 @@ function ProductImgRight() {
             <div className={cx('box-number-detail')}>
                 <span className={cx('so-luong')}>Số lượng:</span>
                 <span className={cx('new-cart-quantity')}>
-                    <a href="/" className={cx('minor', 'quantity-change')} data-value="-1">
+                    <button className={cx('minor', 'quantity-change')} onClick={() => count > 0 && setCount(count - 1)}>
                         –
-                    </a>
-                    <input className={cx('buy-quantity', 'quantity-change')} value="1" size="5" />
-                    <a href="/" className={cx('add', 'quantity-change')} data-value="1">
+                    </button>
+                    <input className={cx('buy-quantity', 'quantity-change')} value={count} placeholder="1" />
+                    <button className={cx('add', 'quantity-change')} onClick={() => setCount(count + 1)}>
                         +
-                    </a>
+                    </button>
                 </span>
-                <a href="/" className={cx('them-vao-gio-nao')}>
+                <Link to="/gio-hang" className={cx('them-vao-gio-nao')}>
                     <FontAwesomeIcon icon={faCartPlus} /> <span>Thêm vào giỏ hàng</span>
-                </a>
+                </Link>
 
-                <a className={cx('like-product')} href="/" title="Thích sản phẩm này">
+                <a className={cx('like-product')} href="/like" title="Thích sản phẩm này">
                     <FontAwesomeIcon className={cx('like-product-icon')} icon={faHeart} />
                 </a>
             </div>
             <div className={cx('btn-buy')}>
                 <div className={cx('top-buttons-th1')}>
-                    <a className={cx('btn-buy-top')} href="/">
+                    <Link to="/gio-hang" className={cx('btn-buy-top')}>
                         <span>Đặt mua ngay</span> Giao hàng tận nơi nhanh chóng
-                    </a>
+                    </Link>
                 </div>
                 <div className={cx('bottom-buttons-th1')}>
                     <a className={cx('btn-buy-bottom')} href="/">
