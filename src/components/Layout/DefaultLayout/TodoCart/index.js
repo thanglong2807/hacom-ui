@@ -7,12 +7,12 @@ import styles from './TodoCart.module.scss';
 const cx = classNames.bind(styles);
 function TodoCart() {
     const [count, setCount] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [data, setData] = useState([]);
 
     useEffect(() => {
         if (data === []) {
-            setLoading(false);
+            setLoading(true);
         } else {
             setLoading(false);
             const getLocalItems = JSON.parse(localStorage.getItem('data'));
@@ -36,7 +36,7 @@ function TodoCart() {
                         <span>Giỏ hàng của bạn</span>
                     </Link>
                 </span>
-                {loading ? (
+                {!loading ? (
                     <>
                         <h3 className={cx('title-h3')}>
                             Giỏ hàng <span>(0 sản phẩm)</span>

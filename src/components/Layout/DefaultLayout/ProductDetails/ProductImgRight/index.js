@@ -19,7 +19,6 @@ function ProductImgRight({ data }) {
     }, []);
 
     const addToCart = () => {
-        alert('đã thêm thành công');
         // lay du lieu tu local ve
 
         // [] , [data]
@@ -35,6 +34,7 @@ function ProductImgRight({ data }) {
         if (!getLocalItems) {
             localStorage.setItem('data', JSON.stringify([]));
             getLocalItems = JSON.parse(localStorage.getItem('data'));
+            alert('Đã thêm thành công');
         }
 
         const findItem = getLocalItems.find((item) => {

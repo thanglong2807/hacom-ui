@@ -78,11 +78,10 @@ function Header() {
                             onFocus={() => setShowResult(true)}
                             placeholder="Nhập sản phẩm từ khóa cần tìm"
                         />
-                        {!!searchValue && (
-                            <button className={cx('search-btn')}>
-                                <FontAwesomeIcon icon={faMagnifyingGlass} />
-                            </button>
-                        )}
+
+                        <button className={cx('search-btn')}>
+                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                        </button>
                     </div>
                 </Tippy>
                 <div className={cx('header-bottom-right')}>
