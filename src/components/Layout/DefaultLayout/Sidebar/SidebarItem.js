@@ -35,7 +35,7 @@ function SibarItem() {
                     render={(attrs) => <MenuContainer className={cx('menu-sidebar')} tabIndex="-1" {...attrs} />}
                 >
                     <li className={cx('items-li')}>
-                        <Link to="/product/loaisp/2/laptop">
+                        <Link to="/product/1">
                             <FontAwesomeIcon icon={faLaptop} />
                             <span>Laptop, Tablet, Mobile</span>
                         </Link>
