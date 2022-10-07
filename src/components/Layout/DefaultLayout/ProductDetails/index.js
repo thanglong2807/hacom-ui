@@ -32,14 +32,14 @@ function ProductDetail() {
                 <div className={cx('product__container')}>
                     <div className={cx('product__container-title')}>
                         <span className={cx('product-title-span')}>
-                            <Link className={cx('product-title-a', 'home')} to="/">
+                            <Link className={cx('product-title-a', 'home')} to="/hacom-ui">
                                 <span>Trang chủ </span>
                             </Link>
-                            <Link className={cx('product-title-a', 'items')} to="/">
+                            <Link className={cx('product-title-a', 'items')} to="/hacom-ui">
                                 <span>{result.title}</span>
                             </Link>
 
-                            <Link className={cx('product-title-a', 'items')} to="/">
+                            <Link className={cx('product-title-a', 'items')} to="/hacom-ui">
                                 <span>{result.tensp}</span>
                             </Link>
                         </span>

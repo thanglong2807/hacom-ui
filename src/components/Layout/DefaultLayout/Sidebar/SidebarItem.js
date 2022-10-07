@@ -42,105 +42,105 @@ function SibarItem() {
                     </li>
                 </Tippy>
                 <li className={cx('items-li')}>
-                    <Link to="/">
+                    <Link to="/hacom-ui">
                         <FontAwesomeIcon icon={faLaptop} />
                         <span>Phụ Kiện Laptop, PC, Mobile</span>
                     </Link>
                 </li>
 
                 <li className={cx('items-li')}>
-                    <Link to="/">
+                    <Link to="/hacom-ui">
                         <FontAwesomeIcon icon={faLaptopCode} />
                         <span>PC Gaming, Streaming</span>
                     </Link>
                 </li>
 
                 <li className={cx('items-li')}>
-                    <Link to="/">
+                    <Link to="/hacom-ui">
                         <FontAwesomeIcon icon={faServer} />
                         <span>PC Đồ Họa, Render, Máy Chủ</span>
                     </Link>
                 </li>
                 <li className={cx('items-li')}>
-                    <Link to="/">
+                    <Link to="/hacom-ui">
                         <FontAwesomeIcon icon={faDesktop} />
                         <span>PC Văn Phòng, AIO, Mini PC</span>
                     </Link>
                 </li>
                 <li className={cx('items-li')}>
-                    <Link to="/">
+                    <Link to="/hacom-ui">
                         <FontAwesomeIcon icon={faMicrochip} />
                         <span>Linh Kiện Máy Tính</span>
                     </Link>
                 </li>
                 <li className={cx('items-li')}>
-                    <Link to="/">
+                    <Link to="/hacom-ui">
                         <FontAwesomeIcon icon={faTemperature1} />
                         <span>Tản Nhiệt PC, Cooling</span>
                     </Link>
                 </li>
                 <li className={cx('items-li')}>
-                    <Link to="/">
+                    <Link to="/hacom-ui">
                         <FontAwesomeIcon icon={faLaptop} />
                         <span>Màn Hình Máy Tính</span>
                     </Link>
                 </li>
                 <li className={cx('items-li')}>
-                    <Link to="/">
+                    <Link to="/hacom-ui">
                         <FontAwesomeIcon icon={faGamepad} />
                         <span>Phím Chuột, Ghế Game, Gear</span>
                     </Link>
                 </li>
                 <li className={cx('items-li')}>
-                    <Link to="/">
+                    <Link to="/hacom-ui">
                         <FontAwesomeIcon icon={faVolumeHigh} />
                         <span>Máy Chơi Game, Tay Game</span>
                     </Link>
                 </li>
                 <li className={cx('items-li')}>
-                    <Link to="/">
+                    <Link to="/hacom-ui">
                         <FontAwesomeIcon icon={faHeadphones} />
                         <span>Loa, Tai Nghe, Mic, Webcam</span>
                     </Link>
                 </li>
                 <li className={cx('items-li')}>
-                    <Link to="/">
+                    <Link to="/hacom-ui">
                         <FontAwesomeIcon icon={faCamera} />
                         <span>Camera Quan Sát</span>
                     </Link>
                 </li>
                 <li className={cx('items-li')}>
-                    <Link to="/">
+                    <Link to="/hacom-ui">
                         <FontAwesomeIcon icon={faPrint} />
                         <span>Máy In, Máy Chấm Công</span>
                     </Link>
                 </li>
                 <li className={cx('items-li')}>
-                    <Link to="/">
+                    <Link to="/hacom-ui">
                         <FontAwesomeIcon icon={faPrint} />
                         <span>Thiết Bị Văn Phòng Khác</span>
                     </Link>
                 </li>
                 <li className={cx('items-li')}>
-                    <Link to="/">
+                    <Link to="/hacom-ui">
                         <FontAwesomeIcon icon={faHouse} />
                         <span>TB Siêu Thị, Máy Bán Hàng</span>
                     </Link>
                 </li>
                 <li className={cx('items-li')}>
-                    <Link to="/">
+                    <Link to="/hacom-ui">
                         <FontAwesomeIcon icon={faGraduationCap} />
                         <span>Họp, Giảng Dạy, Stream</span>
                     </Link>
                 </li>
                 <li className={cx('items-li')}>
-                    <Link to="/">
+                    <Link to="/hacom-ui">
                         <FontAwesomeIcon icon={faCompactDisc} />
                         <span>Thiết Bị Lưu Trữ, USB, Thẻ</span>
                     </Link>
                 </li>
                 <li className={cx('items-li')}>
-                    <Link to="/">
+                    <Link to="/hacom-ui">
                         <FontAwesomeIcon icon={faWifi} />
                         <span>Thiết Bị Mạng, Phần Mềm</span>
                     </Link>

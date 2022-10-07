@@ -8,7 +8,7 @@ import Error from '~/Pages/404Error';
 
 const publicRoutes = [
     {
-        path: '/',
+        path: '/hacom-ui',
         component: Home,
     },
     {

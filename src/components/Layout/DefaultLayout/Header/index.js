@@ -50,7 +50,7 @@ function Header() {
         <header className={cx('header')}>
             <TopHeader />
             <div className={cx('header-bottom')}>
-                <Link to="/" className={cx('logo')}>
+                <Link to="/hacom-ui" className={cx('logo')}>
                     <img src="https://hanoicomputercdn.com/media/lib/01-09-2022/logo-hacom.png" />
                 </Link>
                 <Tippy

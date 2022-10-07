@@ -26,25 +26,25 @@ function ProductFilter({ data }) {
 
                         <select className={cx('list-sort')}>
                             <option value="/laptop-tablet-mobile">Tất cả kho</option>
-                            <option value="?storeId=ton101">131 Lê Thanh Nghị - Hai Bà Trưng - Hà Nội</option>
-                            <option value="?storeId=ton102">43 Thái Hà - Đống Đa - Hà Nội</option>
-                            <option value="?storeId=ton103">406 Tô Hiệu - Lê Chân - Hải Phòng</option>
-                            <option value="?storeId=ton104">79 Nguyễn Văn Huyên - Cầu Giấy - Hà Nội</option>
-                            <option value="?storeId=ton105">511 Quang Trung - Hà Đông - Hà Nội</option>
-                            <option value="?storeId=ton106">520 Cách Mạng Tháng 8 - Quận 3 - TP HCM</option>
-                            <option value="?storeId=ton107">398 Nguyễn Văn Cừ - Long Biên - Hà Nội</option>
-                            <option value="?storeId=ton110">299 Minh Khai - Từ Sơn - Bắc Ninh</option>
-                            <option value="?storeId=ton111">59 Thợ Nhuộm - Hoàn Kiếm - Hà Nội</option>
-                            <option value="?storeId=ton112">CT4A Bắc Linh Đàm - Hoàng Mai - Hà Nội</option>
-                            <option value="?storeId=ton113">77 Cao Lỗ - Đông Anh - Hà Nội</option>
-                            <option value="?storeId=ton114">57 Trần Phú - Hà Đông - Hà Nội</option>
-                            <option value="?storeId=ton115">135 Hùng Vương - Hoàng Văn Thụ - Bắc Giang</option>
-                            <option value="?storeId=ton116">136 Lê Hoàn - Quốc Lộ 1A - Phủ Lý - Hà Nam</option>
-                            <option value="?storeId=ton117">147 Lê Lợi - Thành Phố Vinh - Nghệ An</option>
-                            <option value="?storeId=ton118">126 Lương Ngọc Quyến - Quang Trung - Thái Nguyên</option>
-                            <option value="?storeId=ton119">Số 6 Trần Phú - Điện Biên - Thanh Hóa</option>
-                            <option value="?storeId=ton120">500 Nguyễn Thị Thập - Quận 7 - TP. Hồ Chí Minh</option>
-                            <option value="?storeId=ton121">Số 2 Thoại Ngọc Hầu - Tân Phú - TP. Hồ Chí Minh</option>
+                            <option value="">131 Lê Thanh Nghị - Hai Bà Trưng - Hà Nội</option>
+                            <option value="">43 Thái Hà - Đống Đa - Hà Nội</option>
+                            <option value="">406 Tô Hiệu - Lê Chân - Hải Phòng</option>
+                            <option value="">79 Nguyễn Văn Huyên - Cầu Giấy - Hà Nội</option>
+                            <option value="">511 Quang Trung - Hà Đông - Hà Nội</option>
+                            <option value="">520 Cách Mạng Tháng 8 - Quận 3 - TP HCM</option>
+                            <option value="">398 Nguyễn Văn Cừ - Long Biên - Hà Nội</option>
+                            <option value="">299 Minh Khai - Từ Sơn - Bắc Ninh</option>
+                            <option value="">59 Thợ Nhuộm - Hoàn Kiếm - Hà Nội</option>
+                            <option value="">CT4A Bắc Linh Đàm - Hoàng Mai - Hà Nội</option>
+                            <option value="">77 Cao Lỗ - Đông Anh - Hà Nội</option>
+                            <option value="">57 Trần Phú - Hà Đông - Hà Nội</option>
+                            <option value="">135 Hùng Vương - Hoàng Văn Thụ - Bắc Giang</option>
+                            <option value="">136 Lê Hoàn - Quốc Lộ 1A - Phủ Lý - Hà Nam</option>
+                            <option value="">147 Lê Lợi - Thành Phố Vinh - Nghệ An</option>
+                            <option value="">126 Lương Ngọc Quyến - Quang Trung - Thái Nguyên</option>
+                            <option value="">Số 6 Trần Phú - Điện Biên - Thanh Hóa</option>
+                            <option value="">500 Nguyễn Thị Thập - Quận 7 - TP. Hồ Chí Minh</option>
+                            <option value="">Số 2 Thoại Ngọc Hầu - Tân Phú - TP. Hồ Chí Minh</option>
                         </select>
 
                         <div className={cx('horizontal-price-filter')}>

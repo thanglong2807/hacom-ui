@@ -29,10 +29,10 @@ function TodoCart() {
         <div className={cx('wrapper')}>
             <div className={cx('product__container-title')}>
                 <span className={cx('product-title-span')}>
-                    <Link className={cx('product-title-a', 'home')} to="/">
+                    <Link className={cx('product-title-a', 'home')} to="/hacom-ui">
                         <span>Trang chủ</span>
                     </Link>
-                    <Link className={cx('product-title-a', 'items')} to="/">
+                    <Link className={cx('product-title-a', 'items')} to="/hacom-ui">
                         <span>Giỏ hàng của bạn</span>
                     </Link>
                 </span>
@@ -44,7 +44,7 @@ function TodoCart() {
                         <div className={cx('no-product-cart')}>
                             <img src="https://hacom.vn/template/july_2021/images/tk-shopping-img.png?v=1.1" alt="" />
                             <p>Không có sản phẩm nào trong giỏ hàng của bạn</p>
-                            <Link to="/">Tiếp tục mua sắm</Link>
+                            <Link to="/hacom-ui">Tiếp tục mua sắm</Link>
                         </div>
                     </>
                 ) : (
@@ -72,7 +72,7 @@ function TodoCart() {
                                         <div className={cx('cart-product-items-title')}>
                                             <input type="checkbox" />
                                             <div className={cx('product-items')}>
-                                                <Link to="/">
+                                                <Link to="/hacom-ui">
                                                     <img
                                                         className={cx('product-items-img')}
                                                         src={item.anhsp[0]}
@@ -80,7 +80,7 @@ function TodoCart() {
                                                     />
                                                 </Link>
                                                 <div className={cx('product-items-chile')}>
-                                                    <Link to="/">{item.tensp}</Link>
+                                                    <Link to="/hacom-ui">{item.tensp}</Link>
                                                     <span>
                                                         Mã SP:<b> {item.id} </b>
                                                     </span>
