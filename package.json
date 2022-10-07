@@ -2,7 +2,7 @@
     "name": "hacom-ui",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://thanglong2807.github.io/",
+    "homepage": "https://thanglong2807.github.io/hacom-ui/",
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^6.2.0",
         "@fortawesome/free-regular-svg-icons": "^6.2.0",
