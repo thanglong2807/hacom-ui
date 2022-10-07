@@ -22,7 +22,7 @@ function Header() {
     useEffect(() => {
         const getLocalItems = JSON.parse(localStorage.getItem('data'));
         setData(getLocalItems);
-        console.log(data);
+
         setCart(data.length);
     }, []);
 

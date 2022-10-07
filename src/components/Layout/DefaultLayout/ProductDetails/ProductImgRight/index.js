@@ -19,40 +19,25 @@ function ProductImgRight({ data }) {
     }, []);
 
     const addToCart = () => {
-        // lay du lieu tu local ve
-
-        // [] , [data]
-
-        // khi them 1 san pham vao gio
-
-        // lay tat ca san pham cu + moi
-
         let arr = [];
-
         let getLocalItems = JSON.parse(localStorage.getItem('data'));
-
         if (!getLocalItems) {
             localStorage.setItem('data', JSON.stringify([]));
             getLocalItems = JSON.parse(localStorage.getItem('data'));
             alert('Đã thêm thành công');
         }
-
         const findItem = getLocalItems.find((item) => {
             return item.id === data.id;
         });
-
         if (findItem) {
             findItem.count += 1;
-
             const newData = getLocalItems.map((item) => {
                 if (item.id === findItem.id) {
                     return findItem;
                 }
                 return item;
             });
-
             localStorage.setItem('data', JSON.stringify(newData));
-
             // 1a 1b
         } else {
             data.count = 1;

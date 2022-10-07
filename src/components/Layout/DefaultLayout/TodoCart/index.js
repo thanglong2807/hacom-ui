@@ -36,7 +36,7 @@ function TodoCart() {
                         <span>Giỏ hàng của bạn</span>
                     </Link>
                 </span>
-                {!loading ? (
+                {loading ? (
                     <>
                         <h3 className={cx('title-h3')}>
                             Giỏ hàng <span>(0 sản phẩm)</span>
