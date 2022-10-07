@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.60302095.css",
-    "main.js": "/static/js/main.0604ea8f.js",
-    "static/js/787.36f9b4a8.chunk.js": "/static/js/787.36f9b4a8.chunk.js",
-    "index.html": "/index.html",
-    "main.60302095.css.map": "/static/css/main.60302095.css.map",
-    "main.0604ea8f.js.map": "/static/js/main.0604ea8f.js.map",
-    "787.36f9b4a8.chunk.js.map": "/static/js/787.36f9b4a8.chunk.js.map"
+    "main.css": "/hacom-ui/static/css/main.60302095.css",
+    "main.js": "/hacom-ui/static/js/main.46ddee3c.js",
+    "static/js/787.36f9b4a8.chunk.js": "/hacom-ui/static/js/787.36f9b4a8.chunk.js",
+    "index.html": "/hacom-ui/index.html",
+    "main.60302095.css.map": "/hacom-ui/static/css/main.60302095.css.map",
+    "main.46ddee3c.js.map": "/hacom-ui/static/js/main.46ddee3c.js.map",
+    "787.36f9b4a8.chunk.js.map": "/hacom-ui/static/js/787.36f9b4a8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.60302095.css",
-    "static/js/main.0604ea8f.js"
+    "static/js/main.46ddee3c.js"
   ]
 }
