@@ -13,7 +13,7 @@ function ProductShowItem({ data }) {
     const [productItem, setProductItem] = useState(data);
 
     const [orderName, setOrderName] = useState('ASC');
-    console.log(data);
+
     useEffect(() => {
         setProductItem(data);
     }, [data]);

@@ -7,19 +7,23 @@ import styles from './TodoCart.module.scss';
 const cx = classNames.bind(styles);
 function TodoCart() {
     const [count, setCount] = useState([]);
-    const [loading, setLoading] = useState(true);
     const [data, setData] = useState([]);
 
+    let a = true;
+    let loading = true;
+
     useEffect(() => {
-        if (data === []) {
-            setLoading(true);
-        } else {
-            setLoading(false);
-            const getLocalItems = JSON.parse(localStorage.getItem('data'));
-            setData(getLocalItems);
+        const getLocalItems = JSON.parse(localStorage.getItem('data'));
+        if (getLocalItems) {
+            return setData(getLocalItems);
         }
     }, []);
 
+    if (data.length === 0) {
+        loading = true;
+    } else {
+        loading = false;
+    }
     const removeItem = () => {
         localStorage.removeItem('data');
         setData([]);
@@ -36,7 +40,7 @@ function TodoCart() {
                         <span>Giỏ hàng của bạn</span>
                     </Link>
                 </span>
-                {loading ? (
+                {loading && (
                     <>
                         <h3 className={cx('title-h3')}>
                             Giỏ hàng <span>(0 sản phẩm)</span>
@@ -47,7 +51,8 @@ function TodoCart() {
                             <Link to="/hacom-ui">Tiếp tục mua sắm</Link>
                         </div>
                     </>
-                ) : (
+                )}
+                {!loading && (
                     <div>
                         <h3 className={cx('title-h3')}>
                             Giỏ hàng <span>{`(${data.length} sản phẩm)`}</span>
@@ -61,11 +66,11 @@ function TodoCart() {
                                     <div className={cx('cart-product-items-price')}> Đơn giá</div>
                                     <div className={cx('cart-product-items-amount')}> Số lượng</div>
                                     <div className={cx('cart-product-items-into-money')}> Thành tiền</div>
-                                    <div className={cx('cart-product-items-delete')}>
-                                        <button onClick={removeItem}>
+                                    <button onClick={removeItem}>
+                                        <div className={cx('cart-product-items-delete')}>
                                             <FontAwesomeIcon icon={faTrash} />
-                                        </button>
-                                    </div>
+                                        </div>
+                                    </button>
                                 </div>
                                 {data.map((item, index) => (
                                     <div className={cx('cart-container-left-items')}>
@@ -125,13 +130,13 @@ function TodoCart() {
                                             </div>
                                         </div>
                                         <div className={cx('cart-product-items-into-money', 'red')}>
-                                            {item.newprice * item.count}
+                                            {(a = item.newprice * item.count)}
                                         </div>
-                                        <div className={cx('cart-product-items-delete')}>
-                                            <button>
+                                        <button onClick={() => setData(data.splice(1, index))}>
+                                            <div className={cx('cart-product-items-delete')}>
                                                 <FontAwesomeIcon icon={faTrash} />
-                                            </button>
-                                        </div>
+                                            </div>
+                                        </button>
                                     </div>
                                 ))}
                             </div>
@@ -143,7 +148,7 @@ function TodoCart() {
                                 <div>
                                     <div className={cx('pay-item')}>
                                         <span>Tạm tính</span>
-                                        <span className={cx('pay-price')}>6.967.000₫</span>
+                                        <span className={cx('pay-price')}>{a}₫</span>
                                     </div>
                                     <div className={cx('pay-item')}>
                                         <span>Giảm giá</span>
@@ -151,7 +156,7 @@ function TodoCart() {
                                     </div>
                                     <div className={cx('pay-item')}>
                                         <span>Thành tiền</span>
-                                        <span className={cx('pay-price-pro', 'red')}>6.967.000₫</span>
+                                        <span className={cx('pay-price-pro', 'red')}>{a}₫</span>
                                     </div>
                                 </div>
                                 <span className={cx('pay-vat')}>(Đã bao gồm VAT nếu có)</span>

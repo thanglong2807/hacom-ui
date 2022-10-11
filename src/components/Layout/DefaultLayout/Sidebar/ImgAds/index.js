@@ -52,17 +52,33 @@ function ImgAds() {
             </div>
             <div className={cx('slide-right')}>
                 <img className={cx('border-radius')} src="https://i.ytimg.com/vi/bEqU7wf9VXY/hq720.jpg" alt="anh" />
-                <img className={cx('border-radius')} src="https://i.ytimg.com/vi/bEqU7wf9VXY/hq720.jpg" alt="anh" />
+                <img
+                    className={cx('border-radius')}
+                    src="https://hanoicomputercdn.com/media/banner/13_Sepf3ccdd27d2000e3f9255a7e3e2c48800.jpg"
+                    alt="anh"
+                />
             </div>
 
             <div className={cx('slide-bottom')}>
-                <img className={cx('border-radius')} src="https://i.ytimg.com/vi/bEqU7wf9VXY/hq720.jpg" alt="anh" />
+                <img
+                    className={cx('border-radius')}
+                    src="https://hanoicomputercdn.com/media/banner/11_Octa0e2d08434c40d9cd7ce6b6c8feaab7a.jpg"
+                    alt="anh"
+                />
             </div>
             <div className={cx('slide-bottom')}>
-                <img className={cx('border-radius')} src="https://i.ytimg.com/vi/bEqU7wf9VXY/hq720.jpg" alt="anh" />
+                <img
+                    className={cx('border-radius')}
+                    src="https://hanoicomputercdn.com/media/banner/21_Sep55bad81d952982f3881947aa636774e0.jpg"
+                    alt="anh"
+                />
             </div>
             <div className={cx('slide-bottom')}>
-                <img className={cx('border-radius')} src="https://i.ytimg.com/vi/bEqU7wf9VXY/hq720.jpg" alt="anh" />
+                <img
+                    className={cx('border-radius')}
+                    src="https://hanoicomputercdn.com/media/banner/21_Sepf6f9f7e9f48959924cc84312103b3adc.jpg"
+                    alt="anh"
+                />
             </div>
         </div>
     );

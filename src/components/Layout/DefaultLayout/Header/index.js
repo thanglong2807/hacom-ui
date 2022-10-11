@@ -16,15 +16,17 @@ function Header() {
     const [searchValue, setSearchValue] = useState('');
     const [searchResult, setSearchResult] = useState([]);
     const [showResult, setShowResult] = useState(true);
-    const [data, setData] = useState([]);
+    // const [data, setData] = useState([]);
     const [cart, setCart] = useState(0);
-
-    useEffect(() => {
-        const getLocalItems = JSON.parse(localStorage.getItem('data'));
-        setData(getLocalItems);
-
-        setCart(data.length);
-    }, []);
+    // useEffect(() => {
+    //     const getLocalItems = JSON.parse(localStorage.getItem('data'));
+    //     if (getLocalItems) {
+    //         setData(getLocalItems);
+    //         return setCart(data.length);
+    //     } else {
+    //         return setData(0);
+    //     }
+    // }, [data]);
 
     const inputRef = useRef();
     useEffect(() => {
@@ -94,9 +96,9 @@ function Header() {
                         <span className={cx('bottom-right-item')}>Xây dựng cấu hình</span>
                     </div>
                     <div className={cx('bottom-right-items', 'cart')}>
-                        <Link to="gio-hang">
+                        <Link to="/gio-hang">
                             <FontAwesomeIcon className={cx('bottom-right-cart')} icon={faCartShopping} />
-                            <b className={cx('count-items-cart')}>{cart}</b>
+                            <b className={cx('count-items-cart')}>0</b>
                             <span className={cx('bottom-right-item')}>Giỏ hàng</span>
                         </Link>
                     </div>
