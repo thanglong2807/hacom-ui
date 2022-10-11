@@ -13,7 +13,6 @@ import {
     faMapLocation,
     faPhone,
     faRotate,
-    faTruck,
     faTruckFast,
 } from '@fortawesome/free-solid-svg-icons';
 

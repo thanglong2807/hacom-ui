@@ -1,11 +1,8 @@
-import classNames from 'classnames/bind';
-import styles from './Content.module.scss';
 import request from '~/utils/request';
 
 import { useState, useEffect } from 'react';
 import ItemContentProduct from './ItemContentProduct';
 
-const cx = classNames.bind(styles);
 function ProductContent({ data }) {
     const [productItem, setProductItem] = useState([]);
 
@@ -19,7 +16,7 @@ function ProductContent({ data }) {
             }
         };
         getProduct();
-    }, []);
+    }, [data]);
     return (
         <>
             {productItem.map((result) => (

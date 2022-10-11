@@ -17,7 +17,7 @@ function Header() {
     const [searchResult, setSearchResult] = useState([]);
     const [showResult, setShowResult] = useState(true);
     // const [data, setData] = useState([]);
-    const [cart, setCart] = useState(0);
+    // const [cart, setCart] = useState(0);
     // useEffect(() => {
     //     const getLocalItems = JSON.parse(localStorage.getItem('data'));
     //     if (getLocalItems) {

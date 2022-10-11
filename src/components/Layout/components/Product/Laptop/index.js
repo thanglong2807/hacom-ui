@@ -25,7 +25,7 @@ function Laptop({ data }) {
             }
         };
         getProduct();
-    }, []);
+    }, [data]);
 
     return (
         <>
