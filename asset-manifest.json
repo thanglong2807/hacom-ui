@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/hacom-ui/static/css/main.43bd395f.css",
-    "main.js": "/hacom-ui/static/js/main.664b728c.js",
+    "main.js": "/hacom-ui/static/js/main.44760482.js",
     "static/js/787.36f9b4a8.chunk.js": "/hacom-ui/static/js/787.36f9b4a8.chunk.js",
     "index.html": "/hacom-ui/index.html",
     "main.43bd395f.css.map": "/hacom-ui/static/css/main.43bd395f.css.map",
-    "main.664b728c.js.map": "/hacom-ui/static/js/main.664b728c.js.map",
+    "main.44760482.js.map": "/hacom-ui/static/js/main.44760482.js.map",
     "787.36f9b4a8.chunk.js.map": "/hacom-ui/static/js/787.36f9b4a8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.43bd395f.css",
-    "static/js/main.664b728c.js"
+    "static/js/main.44760482.js"
   ]
 }
