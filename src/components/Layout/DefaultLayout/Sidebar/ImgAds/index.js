@@ -11,22 +11,36 @@ import classNames from 'classnames/bind';
 import styles from './ImgAds.module.scss';
 import { useEffect, useState } from 'react';
 import request from '~/utils/request';
+import { v4 as uuidv4 } from 'uuid';
 
 const cx = classNames.bind(styles);
 function ImgAds() {
-    const [productItem, setProductItem] = useState([]);
+    const [productItem, setProductItem] = useState([
+
+    ]);
+    const dataAds = [{
+        id: uuidv4(),
+        img: "https://hanoicomputercdn.com/media/banner/16_Sepc202097dd01cb397e3336a3b0d535ba8.png"
+    },
+    {
+        id: uuidv4(),
+        img: "https://hanoicomputercdn.com/media/banner/21_Aug1dcf11209bfa33afcaa166a65d56a198.png",
+    },
+    {
+        id: uuidv4(),
+        img: "https://hanoicomputercdn.com/media/banner/09_Sepfba1ae67e880fa4651149f0ecb3b211e.jpg",
+    }
+        , {
+        id: uuidv4(),
+
+        img: "https://hanoicomputercdn.com/media/banner/21_Auge822306b9aba441eea5d5ffc3662b0bc.png"
+    }]
+
+
 
     useEffect(() => {
-        const getProduct = async () => {
-            try {
-                const res = await request.get(`adsimg`);
-                setProductItem(res.data);
-            } catch (error) {
-                console.log(error.message);
-            }
-        };
-        getProduct();
-    }, []);
+        setProductItem(dataAds)
+    }, [])
     return (
         <div className={cx('layout-img')}>
             <div className={cx('img-ads-container')}>
@@ -44,8 +58,8 @@ function ImgAds() {
                     className={cx('mySwiper', 'border-radius')}
                 >
                     {productItem.map((result) => (
-                        <SwiperSlide>
-                            <img src={result.avatar} alt="anh" />
+                        <SwiperSlide key={result.id}>
+                            <img src={result.img} alt="anh" />
                         </SwiperSlide>
                     ))}
                 </Swiper>

@@ -7,11 +7,11 @@ const cx = classNames.bind(styles);
 function ItemProduct({ data }) {
     return (
         <div className={cx('product__container-item')}>
-            <Link to={`/ProductDetails/${data.loaispId}/${data.id}`}>
-                <img src={data.anhsp[0]} className={cx('items-img')} alt={data.avatar} />
+            <Link to={`/ProductDetails/${data.producttype}/${data.id}`}>
+                <img src={data.images} className={cx('items-img')} alt={data.title} />
             </Link>
             <div className={cx('items-evaluate')}>
-                <Link to={`/ProductDetails/${data.loaispId}/${data.id}`} className={cx('items-evaluate-a')}>
+                <Link to={`/ProductDetails/${data.producttype}/${data.id}`} className={cx('items-evaluate-a')}>
                     <img src="https://hacom.vn/media/lib/star_0.png" alt="rate" className={cx('items-evaluate-img')} />
                     <span className={cx('items-evaluate-cound')}>(0)</span>
                 </Link>
@@ -19,8 +19,8 @@ function ItemProduct({ data }) {
             </div>
             <div className={cx('items-info')}>
                 <h3 className={cx('items-info-name')}>
-                    <Link style={{ 'text-align': 'initial' }} to={`/ProductDetails/${data.loaispId}/${data.id}`}>
-                        {data.tensp}
+                    <Link style={{ 'text-align': 'initial' }} to={`/ProductDetails/${data.producttype}/${data.id}`}>
+                        {data.nameproduct}
                     </Link>
                 </h3>
                 {!data.mota ? (
@@ -30,7 +30,7 @@ function ItemProduct({ data }) {
                     </ul>
                 ) : (
                     <ul>
-                        <li>{data.mota}</li>
+                        <li>{data.describe}</li>
                     </ul>
                 )}
                 <div>

@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import React from 'react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -8,19 +8,19 @@ import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper';
 import classNames from 'classnames/bind';
 import styles from './Content.module.scss';
-
+import { v4 as uuidv4 } from 'uuid';
 import ProductContent from './ProductContent';
 const cx = classNames.bind(styles);
 function Content() {
     const danhmuc = [
         {
             title: 'LAPTOP, TABLET, MOBILE',
-            id: 1,
+            id: uuidv4(),
             describe: ['Laptop, Máy Tính Xách Tay', ' Điện Thoại, Máy Tính Bảng'],
         },
         {
             title: 'PC VĂN PHÒNG, AIO, MINI PC',
-            id: 2,
+            id: uuidv4(),
             describe: [
                 'Máy Tính Văn Phòng HACOM',
                 ' Máy Tính Để Bàn Dell',
@@ -33,7 +33,7 @@ function Content() {
 
         {
             title: 'PC GAMING, STREAMING',
-            id: 3,
+            id: uuidv4(),
             describe: [
                 'Máy Tính Chơi Game HACOM',
                 ' Máy Tính Live Stream, PC Streamer, Youtuber',
@@ -45,7 +45,7 @@ function Content() {
         },
         {
             title: 'PC ĐỒ HỌA, RENDER, MÁY CHỦ',
-            id: 4,
+            id: uuidv4(),
             describe: [
                 'PC Đồ Họa',
                 'Render HACOM',
@@ -60,7 +60,7 @@ function Content() {
     return (
         <div className={cx('wrapper')}>
             {danhmuc.map((result) => (
-                <div className={cx('items')}>
+                <div key={result.id} className={cx('items')}>
                     <div className={cx('items-title')}>
                         <p>CẤU HÌNH PC KHỦNG VẬT VÃ </p>
                         <p>GAME THỦ CHƠI GAME THẬT ĐÃ</p>
@@ -83,7 +83,7 @@ function Content() {
                     >
                         <>
                             <SwiperSlide>
-                                <ProductContent key={result.id} data={result.id} />
+                                <ProductContent key={result.id} data={result.producttype} />
                             </SwiperSlide>
                         </>
                     </Swiper>

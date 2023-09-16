@@ -1,6 +1,6 @@
 import axios from 'axios';
 
 const request = axios.create({
-    baseURL: 'https://6329b91ad2c97d8c526eab02.mockapi.io/',
+    baseURL: 'https://65052933ef808d3c66efcefc.mockapi.io/',
 });
 export default request;

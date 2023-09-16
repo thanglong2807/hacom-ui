@@ -1,5 +1,5 @@
 import request from '~/utils/request';
-
+import React from 'react';
 import { useState, useEffect } from 'react';
 import ItemContentProduct from './ItemContentProduct';
 
@@ -9,7 +9,7 @@ function ProductContent({ data }) {
     useEffect(() => {
         const getProduct = async () => {
             try {
-                const res = await request.get(`product?loaispId=${data}`);
+                const res = await request.get(`product?producttype=${data}`);
                 setProductItem(res.data);
             } catch (error) {
                 console.log(error.message);
@@ -18,13 +18,17 @@ function ProductContent({ data }) {
         getProduct();
     }, [data]);
     return (
-        <>
-            {productItem.map((result) => (
-                <>
-                    <ItemContentProduct key={result.id} data={result} />
-                </>
-            ))}
-        </>
+        <React.Fragment>
+
+            {
+                productItem.map((result) => (
+                    <React.Fragment>
+                        <ItemContentProduct key={result.id} data={result} />
+                    </React.Fragment>
+                ))
+            }
+
+        </React.Fragment>
     );
 }
 

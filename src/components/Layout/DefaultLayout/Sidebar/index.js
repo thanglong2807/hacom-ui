@@ -13,7 +13,7 @@ function Sidebar() {
     useEffect(() => {
         const getProduct = async () => {
             try {
-                const res = await request.get(`loaisp/`);
+                const res = await request.get(`producttype/`);
 
                 setProductItem(res.data);
             } catch (error) {
